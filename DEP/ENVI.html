@@ -527,6 +527,101 @@ footer *{
 direction:ltr;
 }
 
+footer{
+position:relative;
+overflow:hidden;
+}
+
+/* المثلث الكبير يسار */
+footer::before{
+content:"";
+position:absolute;
+left:-120px;
+bottom:-100px;
+width:350px;
+height:350px;
+background:rgba(255,255,255,.05);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-15deg);
+}
+
+
+/* المثلث النحيف أعلى اليمين */
+footer::after{
+content:"";
+position:absolute;
+top:-80px;
+right:18%;
+width:120px;
+height:240px;
+background:rgba(255,255,255,.06);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(18deg);
+}
+
+.footer-shape{
+position:absolute;
+pointer-events:none;
+}
+
+
+/* مثلث يمين كبير */
+.shape1{
+right:-60px;
+bottom:-70px;
+width:220px;
+height:220px;
+background:rgba(255,255,255,.05);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(25deg);
+}
+
+/* مثلث يمين صغير */
+.shape2{
+right:100px;
+bottom:40px;
+width:100px;
+height:100px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-12deg);
+}
+
+/* مثلث صغير قريب من الوسط */
+.shape3{
+left:38%;
+top:25px;
+width:60px;
+height:60px;
+background:rgba(255,255,255,.06);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(15deg);
+}
+
+
+/* مثلث صغير آخر */
+.shape4{
+left:55%;
+bottom:35px;
+width:45px;
+height:45px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-20deg);
+}
+
+
+/* مثلث متوسط */
+.shape5{
+left:48%;
+top:90px;
+width:80px;
+height:80px;
+background:rgba(255,255,255,.04);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(35deg);
+}
+
 footer p{
 font-family:"Times New Roman",serif;
 margin:0;
@@ -646,7 +741,7 @@ onclick="toggleDepartments()"></i>
 <a href="#">مــقررات الــكليــة</a>
 <a href="../ADMSN/ADMSN.html">القــبـــول</a>
 <a href="../TRNSFR/TRNSFR.html">التـحويـل</a>
-<a href="#">الأسئلة الأكثر شيوعًا</a>
+<a href="../QSN/QSN.html">الأسئلة الأكثر شيوعًا</a>
 
 
 <div class="sidebar-bottom-links">
@@ -718,6 +813,12 @@ onclick="toggleDepartments()"></i>
 </div>
 
 <footer>
+
+<div class="footer-shape shape1"></div>
+<div class="footer-shape shape2"></div>
+<div class="footer-shape shape3"></div>
+<div class="footer-shape shape4"></div>
+<div class="footer-shape shape5"></div>
 
 <p class="footer-title">
 Faculty Website Project

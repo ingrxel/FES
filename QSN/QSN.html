@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الأسئلة الأكثر شيوعًا</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Times New Roman",serif;
+}
+
+.background-design{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+pointer-events:none;
+overflow:hidden;
+}
+
+/* المضلعات */
+
+.polygon{
+position:absolute;
+background:rgba(185,220,198,.25);
+backdrop-filter:blur(2px);
+}
+
+/* أعلى اليمين */
+
+.p1{
+top:-50px;
+right:-70px;
+width:320px;
+height:320px;
+clip-path:polygon(
+30% 0%,
+100% 0%,
+100% 100%,
+0% 35%
+);
+transform:rotate(8deg);
+}
+
+/* أعلى اليسار */
+
+.p2{
+top:120px;
+left:-90px;
+width:280px;
+height:280px;
+clip-path:polygon(
+0 20%,
+100% 0,
+60% 100%
+);
+background:rgba(185,220,198,.18);
+}
+
+/* أسفل اليسار */
+
+.p3{
+bottom:-90px;
+left:-60px;
+width:350px;
+height:350px;
+clip-path:polygon(
+0 0,
+100% 100%,
+0 100%
+);
+background:rgba(185,220,198,.20);
+}
+
+/* أسفل اليمين */
+
+.p4{
+bottom:-120px;
+right:-50px;
+width:340px;
+height:340px;
+clip-path:polygon(
+100% 0,
+100% 100%,
+0 60%
+);
+background:rgba(185,220,198,.18);
+transform:rotate(-10deg);
+}
+
+/* الخطوط الهندسية */
+
+.lines{
+position:absolute;
+border:1px solid rgba(150,190,165,.18);
+border-radius:50%;
+}
+
+.l1{
+width:500px;
+height:500px;
+bottom:-250px;
+right:-180px;
+}
+
+.l2{
+width:420px;
+height:420px;
+top:-210px;
+left:-180px;
+}
+
+.bg-layer2{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-2;
+overflow:hidden;
+}
+
+.poly{
+position:absolute;
+background:rgba(11,93,59,.035);
+filter:blur(.5px);
+}
+
+/* أعلى اليمين */
+
+.poly1{
+top:-120px;
+right:-160px;
+width:520px;
+height:420px;
+clip-path:polygon(
+20% 0%,
+100% 0%,
+80% 80%,
+0% 55%
+);
+
+transform:rotate(18deg);
+}
+
+/* أعلى اليسار */
+
+.poly2{
+top:180px;
+left:-220px;
+width:500px;
+height:500px;
+clip-path:polygon(
+0% 15%,
+90% 0%,
+100% 70%,
+35% 100%
+);
+transform:rotate(-25deg);
+}
+
+/* أسفل اليسار */
+
+.poly3{
+bottom:-200px;
+left:-130px;
+width:650px;
+height:420px;
+clip-path:polygon(
+0% 35%,
+45% 0%,
+100% 45%,
+60% 100%,
+0% 100%
+);
+transform:rotate(12deg);
+}
+
+/* أسفل اليمين */
+
+.poly4{
+bottom:-150px;
+right:-180px;
+width:600px;
+height:500px;
+clip-path:polygon(
+30% 0%,
+100% 20%,
+100% 100%,
+0% 75%
+);
+transform:rotate(-18deg);
+}
+
+.dots-pattern{
+position:fixed;
+top:110px;
+left:30px;
+width:180px;
+height:120px;
+background-image:
+radial-gradient(circle, rgba(11,93,59,.18) 1px, transparent 1px);
+background-size:14px 14px;
+opacity:.7;
+pointer-events:none;
+z-index:-1;
+}
+
+body{
+background:#f8f9fb;
+}
+
+.content{
+padding:120px 5% 80px;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+right:0;
+width:100%;
+height:75px;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 12px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.menu-btn{
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:4px;
+cursor:pointer;
+}
+
+.menu-btn span{
+width:24px;
+height:1px;
+background:#124c7c;
+border-radius:10px;
+}
+
+.logo-section{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+}
+
+.logo-section img{
+width:clamp(80px,9vw,110px);
+height:auto;
+object-fit:contain;
+display:block;
+margin:0 auto;
+}
+
+.university{
+font-family:"Times New Roman",serif;
+font-size:clamp(9px,1vw,11px);
+font-weight:700;
+color:#0B5D3B;
+margin-top:px;
+
+}
+
+.college{
+font-family:"Times New Roman",serif;
+font-size:clamp(7px,0.8vw,9px);
+color:#3D7A5C;
+
+}
+
+.language-btn{
+font-size:clamp(12px,1.3vw,16px);
+font-weight:bold;
+cursor:pointer;
+color:#1f5f3a;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+top:0;
+right:-320px;
+width:320px;
+height:100%;
+background:white;
+box-shadow:-5px 0 15px rgba(0,0,0,.15);
+transition:.3s;
+padding-top:90px;
+z-index:2000;
+overflow-y:auto;
+}
+
+.sidebar.active{
+right:0;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+left:20px;
+font-size:28px;
+cursor:pointer;
+}
+
+.sidebar a{
+display:block;
+padding:15px 25px;
+text-decoration:none;
+font-family:"Times New Roman",serif;
+color:#124c7c;
+font-size:14px;
+border-bottom:1px solid #eee;
+}
+
+.sidebar a:hover{
+background:#f3f3f3;
+}
+
+.sidebar-bottom-links{
+display:grid;
+grid-template-columns:1fr 1px 1fr;
+width:105%;
+margin-top:0;
+position:relative;
+right:0;
+}
+
+/* DROPDOWN */
+
+.dropdown-btn{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:4px 25px;
+border-bottom:1px solid #eee;
+transition:.2s;
+}
+
+.dropdown-btn:hover{
+background:#f3f3f3;
+}
+
+.dropdown-btn a{
+display:block;
+flex:1;
+text-decoration:none;
+font-family:"Times New Roman",serif;
+font-size:14px;
+color:#124c7c;
+}
+.dropdown-btn i{
+font-size:10px;
+color:#124c7c;
+cursor:pointer;
+padding:8px;
+}
+
+.dropdown-content{
+display:none;
+background:#fafafa;
+}
+
+.dropdown-content a{
+display:block;
+padding:12px 35px;
+font-size:12px;
+line-height:1.5;
+border-bottom:1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover{
+background:#f3f3f3;
+}
+
+.sidebar-divider{
+width:1px;
+height:18px;
+background:#d6d6d6;
+position:relative;
+top:12px;
+left:4px;
+}
+
+.sidebar-bottom-links a{
+display:flex;
+justify-content:center;
+align-items:center;
+height:40px;
+width:95%;
+margin:0;
+padding:0;
+font-size:14px;
+font-family:"Times New Roman",serif;
+color:#124c7c;
+text-decoration:none;
+transition:.2s;
+}
+
+.sidebar-bottom-links a:hover{
+background:#f3f3f3;
+}
+
+/* ===========================
+   عنوان الصفحة
+=========================== */
+
+.faq-hero{
+text-align:center;
+margin-bottom:30px;
+}
+
+.faq-hero h1{
+font-size:clamp(45px,6vw,65px);
+color:#0B5D3B;
+margin-bottom:20px;
+}
+
+.faq-hero p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:2;
+color:#555;
+}
+
+
+
+/* ===========================
+   Accordion
+=========================== */
+
+.faq-section{
+width:100%;
+max-width:1400px;
+margin:auto;
+}
+
+.faq-item{
+width:100%;
+margin-bottom:8px;
+border-radius:15px;
+border:2px solid rgba(11,93,59,.15);
+overflow:hidden;
+background:rgba(255,255,255,.72);
+backdrop-filter:blur(10px);
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.faq-question{
+width:100%;
+padding:20px 30px;
+border:none;
+background:none;
+font-size:20px;
+font-weight:600;
+color:#0B5D3B;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:right;
+}
+
+.faq-question span{
+font-size:34px;
+transition:.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+padding:0 30px;
+}
+
+.faq-answer p{
+padding-bottom:30px;
+line-height:2.1;
+font-size:17px;
+color:#555;
+}
+
+
+
+/* ===========================
+   التواصل
+=========================== */
+
+.contact-section{
+text-align:center;
+margin:35px auto;
+}
+
+.contact-section h2{
+font-size:40px;
+color:#0B5D3B;
+margin-bottom:20px;
+}
+
+.contact-section p{
+font-size:18px;
+color:#555;
+margin-bottom:40px;
+}
+
+.contact-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.contact-btn{
+width:280px;
+height:110px;
+border:none;
+border-radius:30px;
+font-size:30px;
+font-weight:600;
+cursor:pointer;
+background:rgba(11,93,59,.1);
+color:#0B5D3B;
+transition:.3s;
+}
+
+.contact-btn:hover{
+transform:translateY(-8px);
+background:#0B5D3B;
+color:white;
+}
+
+
+
+/* ===========================
+   Modal
+=========================== */
+
+.modal-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.modal-box{
+position:relative;
+width:min(450px,95%);
+padding:50px 35px;
+border-radius:35px;
+background:white;
+border:6px solid rgba(11,93,59,.4);
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.08),
+0 0 0 10px rgba(11,93,59,.04);
+text-align:center;
+animation:popup .3s ease;
+}
+
+
+
+@keyframes popup{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.modal-title{
+width:100%;
+background:#0B5D3B;
+color:white;
+padding:16px;
+border-radius:18px;
+font-size:24px;
+font-weight:bold;
+margin-bottom:30px;
+text-align:center;
+}
+
+.close-btn{
+position:absolute;
+top:18px;
+left:18px;
+border:none;
+background:none;
+font-size:35px;
+cursor:pointer;
+color:#777;
+}
+
+.modal-avatar{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid rgba(11,93,59,.1);
+box-shadow:0 5px 25px rgba(0,0,0,.12);
+margin-bottom:25px;
+}
+
+.modal-box h3{
+font-size:28px;
+color:#0B5D3B;
+margin-bottom:10px;
+}
+
+.modal-box h4{
+font-size:18px;
+color:#777;
+margin-bottom:25px;
+}
+
+.modal-box p{
+font-size:17px;
+margin-bottom:15px;
+color:#555;
+}
+
+.email-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+background:#0B5D3B;
+color:white;
+font-size:17px;
+transition:.3s;
+}
+
+.email-btn:hover{
+transform:translateY(-4px);
+}
+
+
+
+/* ===========================
+   معلومات مهمة
+=========================== */
+
+.important-info{
+width:min(1000px,95%);
+margin:35px auto;
+border-radius:30px;
+overflow:hidden;
+background:rgba(255,255,255,.72);
+backdrop-filter:blur(10px);
+}
+
+.important-head{
+background:#0B5D3B;
+color:white;
+padding:22px;
+font-size:28px;
+text-align:center;
+}
+
+.important-info ul{
+padding:40px;
+line-height:2.3;
+font-size:17px;
+}
+
+.important-info li{
+margin-bottom:15px;
+}
+
+
+/* FOOTER */
+
+footer{
+width:100%;
+background:rgba(11,93,59,0.88);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:28px 20px;
+margin-top:80px;
+text-align:center;
+direction:ltr;
+}
+
+footer *{
+direction:ltr;
+}
+
+footer{
+position:relative;
+overflow:hidden;
+}
+
+/* المثلث الكبير يسار */
+footer::before{
+content:"";
+position:absolute;
+left:-120px;
+bottom:-100px;
+width:350px;
+height:350px;
+background:rgba(255,255,255,.05);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-15deg);
+}
+
+
+/* المثلث النحيف أعلى اليمين */
+footer::after{
+content:"";
+position:absolute;
+top:-80px;
+right:18%;
+width:120px;
+height:240px;
+background:rgba(255,255,255,.06);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(18deg);
+}
+
+.footer-shape{
+position:absolute;
+pointer-events:none;
+}
+
+
+/* مثلث يمين كبير */
+.shape1{
+right:-60px;
+bottom:-70px;
+width:220px;
+height:220px;
+background:rgba(255,255,255,.05);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(25deg);
+}
+
+/* مثلث يمين صغير */
+.shape2{
+right:100px;
+bottom:40px;
+width:100px;
+height:100px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-12deg);
+}
+
+/* مثلث صغير قريب من الوسط */
+.shape3{
+left:38%;
+top:25px;
+width:60px;
+height:60px;
+background:rgba(255,255,255,.06);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(15deg);
+}
+
+
+/* مثلث صغير آخر */
+.shape4{
+left:55%;
+bottom:35px;
+width:45px;
+height:45px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(-20deg);
+}
+
+
+/* مثلث متوسط */
+.shape5{
+left:48%;
+top:90px;
+width:80px;
+height:80px;
+background:rgba(255,255,255,.04);
+clip-path:polygon(50% 0%,0% 100%,100% 100%);
+transform:rotate(35deg);
+}
+
+
+footer p{
+font-family:"Times New Roman",serif;
+margin:0;
+}
+
+.footer-title{
+font-size:13px;
+color:rgba(255,255,255,0.85);
+margin-bottom:22px;
+}
+
+.footer-credit{
+font-size:11px;
+line-height:1.8;
+color:rgba(255,255,255,0.55);
+letter-spacing:.5px;
+margin-bottom:22px;
+}
+
+.footer-copyright{
+font-size:11px;
+font-weight:700;
+color:rgba(255,255,255,0.65);
+margin-bottom:22px;
+}
+
+.footer-disclaimer{
+max-width:750px;
+font-size:11px;
+line-height:1.8;
+color:rgba(255,255,255,0.55);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background-design">
+
+<div class="polygon p1"></div>
+<div class="polygon p2"></div>
+<div class="polygon p3"></div>
+<div class="polygon p4"></div>
+
+<div class="lines l1"></div>
+<div class="lines l2"></div>
+</div>
+<div class="bg-layer2">
+<div class="poly poly1"></div>
+<div class="poly poly2"></div>
+<div class="poly poly3"></div>
+<div class="poly poly4"></div>
+
+</div>
+<div class="dots-pattern"></div>
+
+<header>
+
+<div class="menu-btn" onclick="openMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="logo-section">
+
+<img src="../MOUNT.png" alt="logo">
+
+<div class="university">
+جــامــعــة المـــلك عــبدالـــعزيـــز
+</div>
+
+<div class="college">
+كـــليــة عــلوم الأرض
+</div>
+
+</div>
+
+<div class="language-btn">
+ع/A
+</div>
+
+</header>
+
+<div class="sidebar" id="sidebar">
+<div class="close-btn" onclick="closeMenu()">
+✕
+</div>
+
+<a href="../index.html">الرئــيــســة</a>
+<a href="../ABT/ABT.html">عـن الكــليــة</a>
+<div class="dropdown">
+
+<div class="dropdown-btn">
+
+<a href="../DEP/DEP.html">الأقــسام العــلميــة</a>
+
+<i class="fa-solid fa-chevron-down"
+onclick="toggleDepartments()"></i>
+
+</div>
+
+<div class="dropdown-content" id="departmentsMenu">
+<a href="../DEP/ENVI.html">قسم الجيولوجيا الهندسية والبيئية</a>
+<a href="../DEP/PTRO.html">قسم جيولوجيا البترول والترسبات</a>
+<a href="../DEP/GEPHY.html">قسم الجيوفيزياء</a>
+<a href="../DEP/MINROK.html">قسم الثروة المعدنية والصخور</a>
+<a href="../DEP/EXPL.html">قسم تقنية الاستكشاف الجيولوجي</a>
+<a href="../DEP/STRUC.html">قسم الجيولوجيا البنائية والاستشعار عن بُعد</a>
+<a href="../DEP/HYDRO.html">قسم جيولوجيا المياه</a>
+
+</div>
+</div>
+
+<a href="../FLD/FLD.html">الــرحلات الحــقــليــة</a>
+<a href="../EMPLY/EMPLY.html">مجـلات و إحصائيات الــتوظــيـف</a>
+<a href="../FRSTYR/FRSTYR.html">الــسنة التــحضيــريــية</a>
+<a href="#">مــقررات الــكليــة</a>
+<a href="../ADMSN/ADMSN.html">القــبـــول</a>
+<a href="../TRNSFR/TRNSFR.html">التـحويـل</a>
+<a href="QSN.html">الأسئلة الأكثر شيوعًا</a>
+
+
+
+<div class="sidebar-bottom-links">
+
+<a href="#">معرض الصور</a>
+
+<div class="sidebar-divider"></div>
+
+<a href="#">الحساب الرسمي</a>
+
+</div>
+</div>
+
+<div class="content">
+
+<div class="content">
+
+<!-- العنوان -->
+
+<section class="faq-hero">
+
+<h1>الأسئلة الشائعة</h1>
+
+<p>
+تهدف هذه الصفحة إلى الإجابة عن أكثر الأسئلة شيوعًا لدى الطلاب المستجدين وتوفير وسيلة مباشرة للتواصل في حال وجود استفسارات إضافية.
+</p>
+
+</section>
+
+
+<!-- الأسئلة الشائعة -->
+
+<section class="faq-section">
+
+<div class="faq-item">
+
+<button class="faq-question">
+ما هي شروط القبول في كلية علوم الأرض؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تخضع شروط القبول لأنظمة وسياسات القبول المعتمدة من الجامعة، ويتم الإعلان عنها رسميًا عبر الجهات المختصة.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+هل يوجد تحويل إلى الكلية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+حتى الآن لا يوجد إعلان رسمي يؤكد فتح باب التحويل إلى كلية علوم الأرض، وينصح بمتابعة الإعلانات الرسمية باستمرار.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+كم عدد الأقسام الأكاديمية في الكلية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+ما هي الخطة الدراسية للكلية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تتضمن الخطة الدراسية مقررات أساسية ومخبرية وميدانية تهدف إلى تأهيل الطالب علميًا وعمليًا في مختلف تخصصات علوم الأرض.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+هل تتوفر فرص تدريب ميداني للطلاب؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، توفر الكلية العديد من الرحلات والتدريبات الميدانية التي تعزز الجانب التطبيقي لدى الطلاب.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+ما هي مجالات العمل المتاحة للخريجين؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تتنوع مجالات العمل لتشمل قطاع النفط والطاقة، التعدين، البيئة، الاستشارات الجيولوجية، والمجالات الأكاديمية والبحثية.
+</p>
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+كيف يمكنني التواصل مع الكلية للاستفسار؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+يمكن التواصل مع المسؤولين المختصين من خلال خيارات التواصل الموضحة أدناه.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- التواصل -->
+
+<section class="contact-section">
+
+<h2>لم تجد إجابة لسؤالك؟</h2>
+
+<p>
+يمكنك التواصل معنا مباشرةً من خلال الخيارات التالية.
+</p>
+
+<div class="contact-buttons">
+
+<button class="contact-btn" onclick="openModal('maleModal')">
+طلاب
+</button>
+
+<button class="contact-btn" onclick="openModal('femaleModal')">
+طالبات
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- نافذة الطلاب -->
+
+<div class="modal-overlay" id="maleModal">
+
+<div class="modal-box">
+
+<div class="modal-title">
+استفسارات الطلاب
+</div>
+
+<button class="close-btn"
+onclick="closeModal('maleModal')">
+×
+</button>
+
+<img src="MOH.PNG"
+class="modal-avatar">
+
+<h3>أ. محمد خبراني</h3>
+
+<h4>جيولوجي ثروة معدنية و صخور </h4>
+
+<p>mohakhbr@gmail.com</p>
+
+<p>Telegram:@mokhk22</p>
+
+<a href="mailto:mohakhbr@gmail.com"
+class="email-btn">
+
+إرسال بريد إلكتروني
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- نافذة الطالبات -->
+
+<div class="modal-overlay" id="femaleModal">
+
+<div class="modal-box">
+
+<div class="modal-title">
+استفسارات الطالبات
+</div>
+
+<button class="close-btn"
+onclick="closeModal('femaleModal')">
+×
+</button>
+
+<img src="RE.PNG"
+class="modal-avatar">
+
+<h3>أ. ريتال عبدالمنان</h3>
+
+<h4>جيولوجية</h4>
+
+<p>retal.bahrawi@gmail.com</p>
+
+<p>Telegram:@rixieyl</p>
+
+<a href="mailto:retal.bahtawi@gmail.com"
+class="email-btn">
+
+إرسال بريد إلكتروني
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- معلومات مهمة -->
+
+<section class="important-info">
+
+<div class="important-head">
+معلومات مهمة
+</div>
+
+<ul>
+
+<li>
+جميع المعلومات الواردة في هذه الصفحة هي لأغراض إرشادية فقط.
+</li>
+
+<li>
+قد تخضع المعلومات للتحديث وفق ما يصدر رسميًا من الكلية أو الجامعة.
+</li>
+
+<li>
+في حال وجود استفسارات إضافية، يرجى التواصل مع المسؤولين المختصين.
+</li>
+
+</ul>
+
+</section>
+
+</div>
+
+
+</div>
+
+<footer>
+
+<div class="footer-shape shape1"></div>
+<div class="footer-shape shape2"></div>
+<div class="footer-shape shape3"></div>
+<div class="footer-shape shape4"></div>
+<div class="footer-shape shape5"></div>
+
+
+<p class="footer-title">
+Faculty Website Project
+</p>
+
+<p class="footer-credit">
+Designed & Developed by  <br>
+Retal Abdulmannan & Mohammed Khubrani
+</p>
+
+<p class="footer-copyright">
+© 2026 All Rights Reserved.
+</p>
+
+<p class="footer-disclaimer">
+This website was independently designed and developed by students, <br>
+It is not an official website of the Faculty nor  the University.
+</p>
+
+</footer>
+
+
+<script>
+
+function openMenu(){
+document.getElementById("sidebar").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("sidebar").classList.remove("active");
+}
+
+function toggleDepartments(){
+let menu=document.getElementById("departmentsMenu");
+
+if(menu.style.display==="block"){
+menu.style.display="none";
+}
+else{
+menu.style.display="block";
+}
+}
+
+
+/* Accordion */
+
+const questions =
+document.querySelectorAll(".faq-question");
+
+questions.forEach(question=>{
+
+question.addEventListener("click",()=>{
+
+const answer =
+question.nextElementSibling;
+
+const icon =
+question.querySelector("span");
+
+if(answer.style.maxHeight){
+
+answer.style.maxHeight = null;
+
+icon.textContent = "+";
+}
+else{
+
+answer.style.maxHeight =
+answer.scrollHeight + "px";
+
+icon.textContent = "−";
+}
+
+});
+
+});
+
+
+/* Modal */
+
+function openModal(id){
+document.getElementById(id).style.display="flex";
+}
+
+function closeModal(id){
+document.getElementById(id).style.display="none";
+}
+
+
+/* Close Modal Outside */
+
+window.addEventListener("click",function(e){
+
+document.querySelectorAll(".modal-overlay")
+.forEach(function(modal){
+
+if(e.target===modal){
+modal.style.display="none";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
