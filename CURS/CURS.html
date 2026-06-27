@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>الأسئلة الأكثر شيوعًا</title>
+<title>مــقررات الــكليــة </title>
 
 <style>
 
@@ -219,6 +219,7 @@ pointer-events:none;
 z-index:-1;
 }
 
+
 body{
 background:#f8f9fb;
 }
@@ -424,283 +425,430 @@ transition:.2s;
 .sidebar-bottom-links a:hover{
 background:#f3f3f3;
 }
-
 /* ===========================
-   عنوان الصفحة
+   HERO
 =========================== */
 
-.faq-hero{
+.courses-hero{
+
 text-align:center;
-margin-bottom:30px;
+
+margin-bottom:70px;
 }
 
-.faq-hero h1{
-font-size:clamp(45px,6vw,65px);
+.courses-hero h1{
+
+font-size:clamp(42px,6vw,65px);
+
 color:#0B5D3B;
+
 margin-bottom:20px;
 }
 
-.faq-hero p{
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:2;
-color:#555;
-}
+.courses-hero p{
 
-
-
-/* ===========================
-   Accordion
-=========================== */
-
-.faq-section{
-width:100%;
-max-width:1400px;
-margin:auto;
-}
-
-.faq-item{
-width:100%;
-margin-bottom:8px;
-border-radius:15px;
-border:2px solid rgba(11,93,59,.15);
-overflow:hidden;
-background:rgba(255,255,255,.72);
-backdrop-filter:blur(10px);
-box-shadow:0 8px 25px rgba(0,0,0,.05);
-}
-
-.faq-question{
-width:100%;
-padding:20px 30px;
-border:none;
-background:none;
 font-size:20px;
-font-weight:600;
-color:#0B5D3B;
-cursor:pointer;
-display:flex;
-justify-content:space-between;
-align-items:center;
-text-align:right;
-}
 
-.faq-question span{
-font-size:34px;
-transition:.3s;
-}
-
-.faq-answer{
-max-height:0;
-overflow:hidden;
-transition:max-height .4s ease;
-padding:0 30px;
-}
-
-.faq-answer p{
-padding-bottom:30px;
-line-height:2.1;
-font-size:17px;
 color:#555;
+
+max-width:700px;
+
+margin:auto;
+
+line-height:2;
 }
 
 
 
 /* ===========================
-   التواصل
+   CONTAINER
 =========================== */
 
-.contact-section{
-text-align:center;
-margin:35px auto;
-}
+.courses-container{
 
-.contact-section h2{
-font-size:40px;
-color:#0B5D3B;
-margin-bottom:20px;
-}
-
-.contact-section p{
-font-size:18px;
-color:#555;
-margin-bottom:40px;
-}
-
-.contact-buttons{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
 
-.contact-btn{
-width:280px;
-height:110px;
-border:none;
-border-radius:30px;
-font-size:30px;
-font-weight:600;
-cursor:pointer;
-background:rgba(11,93,59,.1);
-color:#0B5D3B;
-transition:.3s;
-}
+flex-direction:column;
 
-.contact-btn:hover{
-transform:translateY(-8px);
-background:#0B5D3B;
-color:white;
+gap:40px;
 }
 
 
 
 /* ===========================
-   Modal
+   COURSE CARD
 =========================== */
 
-.modal-overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.55);
-display:none;
-justify-content:center;
-align-items:center;
-padding:20px;
-z-index:9999;
-}
+.course-card{
+height:auto;
+background:rgba(255,255,255,.75);
 
-.modal-box{
-position:relative;
-width:min(450px,95%);
-padding:50px 35px;
+backdrop-filter:blur(12px);
+
 border-radius:35px;
-background:white;
-border:6px solid rgba(11,93,59,.4);
+
+padding:35px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:35px;
+
+align-items:center;
+
+box-shadow:0 10px 35px rgba(0,0,0,.05);
+
+position:relative;
+
+overflow:hidden;
+justify-content:center;
+transition:.35s;
+border:6px solid rgba(11,93,59,.18);
 
 box-shadow:
-0 12px 35px rgba(0,0,0,.08),
-0 0 0 10px rgba(11,93,59,.04);
-text-align:center;
-animation:popup .3s ease;
+0 12px 35px rgba(0,0,0,.06),
+0 0 0 6px rgba(11,93,59,.03);
+
+position:relative;
+}
+
+.course-card:hover{
+
+transform:translateY(-10px);
 }
 
 
 
-@keyframes popup{
+/* زخارف */
 
-from{
-opacity:0;
-transform:scale(.8);
-}
+.course-card::before{
 
-to{
-opacity:1;
-transform:scale(1);
-}
-}
+content:"";
 
-.modal-title{
-width:100%;
-background:#0B5D3B;
-color:white;
-padding:16px;
-border-radius:18px;
-font-size:24px;
-font-weight:bold;
-margin-bottom:30px;
-text-align:center;
-}
-
-.close-btn{
 position:absolute;
-top:18px;
-left:18px;
-border:none;
-background:none;
-font-size:35px;
-cursor:pointer;
-color:#777;
-}
 
-.modal-avatar{
-width:140px;
-height:140px;
+top:-80px;
+
+right:-80px;
+
+width:180px;
+
+align-items:stretch;
+background:rgba(11,93,59,.05);
+
 border-radius:50%;
-object-fit:cover;
-border:6px solid rgba(11,93,59,.1);
-box-shadow:0 5px 25px rgba(0,0,0,.12);
-margin-bottom:25px;
 }
 
-.modal-box h3{
-font-size:28px;
+.course-card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:20px;
+
+left:20px;
+
+width:55px;
+
+height:55px;
+
+background:rgba(11,93,59,.05);
+
+clip-path:polygon(
+50% 0%,
+0% 100%,
+100% 100%
+);
+}
+
+
+
+/* ===========================
+   INFO
+=========================== */
+
+.course-info{
+
+flex:1 1 250px;
+
+text-align:center;
+}
+
+.course-icon{
+
+width:90px;
+
+height:90px;
+
+object-fit:contain;
+
+margin-bottom:20px;
+}
+
+.course-info h2{
+
+font-size:32px;
+
 color:#0B5D3B;
+
 margin-bottom:10px;
 }
 
-.modal-box h4{
+.course-info span{
+
+display:block;
+
 font-size:18px;
-color:#777;
+
+color:#666;
+
 margin-bottom:25px;
 }
 
-.modal-box p{
-font-size:17px;
-margin-bottom:15px;
-color:#555;
+.course-details{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
 }
 
-.email-btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-background:#0B5D3B;
-color:white;
-font-size:17px;
+.course-details div{
+
+background:#f7faf8;
+
+padding:15px;
+
+border-radius:18px;
+
+font-size:15px;
+
+color:#555;
+
+box-shadow:0 3px 10px rgba(0,0,0,.03);
+}
+
+
+
+/* ===========================
+   CONTENT
+=========================== */
+.course-title{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:15px;
+}
+
+
+.course-icon{
+
+width:50px;
+
+height:50px;
+
+object-fit:contain;
+
+margin:0;
+}
+
+
+.course-title h2{
+
+margin:0;
+
+font-size:32px;
+
+color:#0B5D3B;
+}
+.course-content{
+
+flex:2 1 450px;
+}
+
+.course-tabs{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-bottom:25px;
+}
+
+.tab-btn{
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:999px;
+
+background:#eef5f0;
+
+color:#0B5D3B;
+
+font-size:15px;
+
+cursor:pointer;
+
 transition:.3s;
 }
 
-.email-btn:hover{
+.tab-btn.active{
+
+background:#0B5D3B;
+
+color:white;
+}
+
+.tab-btn:hover{
+
+background:#0B5D3B;
+
+color:white;
+}
+
+.tab-panel{
+
+display:none;
+
+animation:fade .4s;
+}
+
+.tab-panel.active{
+
+display:block;
+}
+
+.tab-panel p,
+.tab-panel li{
+
+line-height:2;
+
+color:#555;
+}
+
+.tab-panel ul{
+
+padding-right:20px;
+}
+
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.course-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:#0B5D3B;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:999px;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.course-btn:hover{
+
+background:#124c7c;
+
 transform:translateY(-4px);
 }
 
 
 
 /* ===========================
-   معلومات مهمة
+   IMAGE
 =========================== */
 
-.important-info{
-width:min(1000px,95%);
-margin:35px auto;
-border-radius:30px;
+.course-image{
+
+width:260px;
+
+aspect-ratio:1;
+
 overflow:hidden;
-background:rgba(255,255,255,.72);
-backdrop-filter:blur(10px);
+
+clip-path:polygon(
+50% 0%,
+93% 25%,
+93% 75%,
+50% 100%,
+7% 75%,
+7% 25%
+);
+
+border-radius:25px;
+
+flex:0 0 260px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+align-self:center;
 }
 
-.important-head{
-background:#0B5D3B;
-color:white;
-padding:22px;
-font-size:28px;
-text-align:center;
+.course-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+margin:auto;}
+
+
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
 }
 
-.important-info ul{
-padding:40px;
-line-height:2.3;
-font-size:17px;
-}
+to{
 
-.important-info li{
-margin-bottom:15px;
-}
+opacity:1;
 
+transform:translateY(0);
+}
+}
 
 /* FOOTER */
 
@@ -854,7 +1002,6 @@ color:rgba(255,255,255,0.55);
 </head>
 
 <body>
-
 <div class="background-design">
 
 <div class="polygon p1"></div>
@@ -873,7 +1020,6 @@ color:rgba(255,255,255,0.55);
 
 </div>
 <div class="dots-pattern"></div>
-
 <header>
 
 <div class="menu-btn" onclick="openMenu()">
@@ -935,11 +1081,11 @@ onclick="toggleDepartments()"></i>
 <a href="../FLD/FLD.html">الــرحلات الحــقــليــة</a>
 <a href="../EMPLY/EMPLY.html">مجـلات و إحصائيات الــتوظــيـف</a>
 <a href="../FRSTYR/FRSTYR.html">الــسنة التــحضيــريــية</a>
-<a href="../CURS/CURS.html">مــقررات الــكليــة</a>
+<a href="CURS.html">مــقررات الــكليــة</a>
 <a href="../ADMSN/ADMSN.html">القــبـــول</a>
 <a href="../TRNSFR/TRNSFR.html">التـحويـل</a>
 <a href="../STUDY/STUDY.html">الــدراســة والخــطــة الــدراســية</a>
-<a href="QSN.html">الأسئلة الأكثر شيوعًا</a>
+<a href="../QSN/QSN.html">الأسئلة الأكثر شيوعًا</a>
 
 
 
@@ -956,279 +1102,512 @@ onclick="toggleDepartments()"></i>
 
 <div class="content">
 
-<div class="content">
+<!-- ===========================
+     عنوان الصفحة
+=========================== -->
 
-<!-- العنوان -->
+<section class="courses-hero">
 
-<section class="faq-hero">
-
-<h1>الأسئلة الشائعة</h1>
+<h1>المقررات الدراسية</h1>
 
 <p>
-تهدف هذه الصفحة إلى الإجابة عن أكثر الأسئلة شيوعًا لدى الطلاب المستجدين وتوفير وسيلة مباشرة للتواصل في حال وجود استفسارات إضافية.
+استكشف جميع المقررات الدراسية المتاحة في كلية علوم الأرض وتعرّف على محتواها الأكاديمي.
 </p>
 
 </section>
 
 
-<!-- الأسئلة الشائعة -->
 
-<section class="faq-section">
+<!-- ===========================
+     قائمة المقررات
+=========================== -->
 
-<div class="faq-item">
+<section class="courses-container">
 
-<button class="faq-question">
-ما هي شروط القبول في كلية علوم الأرض؟
-<span>+</span>
+
+
+<!-- ===== مقرر 1 ===== -->
+
+<div class="course-card">
+<div class="course-info">
+<div class="course-title">
+
+<img src="geo1.png" class="course-icon">
+
+<h2>جيولوجيا عامة 1</h2>
+</div>
+
+<span>GEO 101</span>
+
+<div class="course-details">
+<div>3 ساعات</div>
+<div>إجباري</div>
+<div>المستوى الأول</div>
+<div>كلية علوم الأرض</div>
+
+</div>
+</div>
+
+<div class="course-content">
+<div class="course-tabs">
+
+<button class="tab-btn active">
+وصف المقرر
 </button>
 
-<div class="faq-answer">
-<p>
-تخضع شروط القبول لأنظمة وسياسات القبول المعتمدة من الجامعة، ويتم الإعلان عنها رسميًا عبر الجهات المختصة.
-</p>
-</div>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-هل يوجد تحويل إلى الكلية؟
-<span>+</span>
+<button class="tab-btn">
+الموضوعات الرئيسية
 </button>
 
-<div class="faq-answer">
-<p>
-حتى الآن لا يوجد إعلان رسمي يؤكد فتح باب التحويل إلى كلية علوم الأرض، وينصح بمتابعة الإعلانات الرسمية باستمرار.
-</p>
-</div>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-كم عدد الأقسام الأكاديمية في الكلية؟
-<span>+</span>
+<button class="tab-btn">
+المهارات المكتسبة
 </button>
 
-<div class="faq-answer">
-<p>
-تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها.
-</p>
-</div>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-ما هي الخطة الدراسية للكلية؟
-<span>+</span>
+<button class="tab-btn">
+المتطلبات السابقة
 </button>
 
-<div class="faq-answer">
-<p>
-تتضمن الخطة الدراسية مقررات أساسية ومخبرية وميدانية تهدف إلى تأهيل الطالب علميًا وعمليًا في مختلف تخصصات علوم الأرض.
-</p>
 </div>
 
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-هل تتوفر فرص تدريب ميداني للطلاب؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-نعم، توفر الكلية العديد من الرحلات والتدريبات الميدانية التي تعزز الجانب التطبيقي لدى الطلاب.
-</p>
-</div>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-ما هي مجالات العمل المتاحة للخريجين؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-تتنوع مجالات العمل لتشمل قطاع النفط والطاقة، التعدين، البيئة، الاستشارات الجيولوجية، والمجالات الأكاديمية والبحثية.
-</p>
-</div>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<button class="faq-question">
-كيف يمكنني التواصل مع الكلية للاستفسار؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-يمكن التواصل مع المسؤولين المختصين من خلال خيارات التواصل الموضحة أدناه.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- التواصل -->
-
-<section class="contact-section">
-
-<h2>لم تجد إجابة لسؤالك؟</h2>
+<div class="tab-panel active">
 
 <p>
-يمكنك التواصل معنا مباشرةً من خلال الخيارات التالية.
+يتناول هذا المقرر المفاهيم الأساسية لعلم الجيولوجيا ويهدف إلى تعريف الطالب بالمعادن والصخور والعمليات الجيولوجية المختلفة وتاريخ الأرض.
 </p>
 
-<div class="contact-buttons">
-
-<button class="contact-btn" onclick="openModal('maleModal')">
-طلاب
-</button>
-
-<button class="contact-btn" onclick="openModal('femaleModal')">
-طالبات
-</button>
-
 </div>
 
-</section>
-
-
-
-<!-- نافذة الطلاب -->
-
-<div class="modal-overlay" id="maleModal">
-
-<div class="modal-box">
-
-<div class="modal-title">
-استفسارات الطلاب
-</div>
-
-<button class="close-btn"
-onclick="closeModal('maleModal')">
-×
-</button>
-
-<img src="MOH.PNG"
-class="modal-avatar">
-
-<h3>أ. محمد خبراني</h3>
-
-<h4>جيولوجي ثروة معدنية و صخور </h4>
-
-<p>mohakhbr@gmail.com</p>
-
-<p>Telegram:@mokhk22</p>
-
-<a href="mailto:mohakhbr@gmail.com"
-class="email-btn">
-
-إرسال بريد إلكتروني
-
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- نافذة الطالبات -->
-
-<div class="modal-overlay" id="femaleModal">
-
-<div class="modal-box">
-
-<div class="modal-title">
-استفسارات الطالبات
-</div>
-
-<button class="close-btn"
-onclick="closeModal('femaleModal')">
-×
-</button>
-
-<img src="RE.PNG"
-class="modal-avatar">
-
-<h3>أ. ريتال عبدالمنان</h3>
-
-<h4>جيولوجية</h4>
-
-<p>remannan@outlook.sa</p>
-
-<p>Telegram:@rixieyl</p>
-
-<a href="mailto:remannan@outlook.sa"
-class="email-btn">
-
-إرسال بريد إلكتروني
-
-</a>
-
-</div>
-
-</div>
-
-
-
-<!-- معلومات مهمة -->
-
-<section class="important-info">
-
-<div class="important-head">
-معلومات مهمة
-</div>
+<div class="tab-panel">
 
 <ul>
-
-<li>
-جميع المعلومات الواردة في هذه الصفحة هي لأغراض إرشادية فقط.
-</li>
-
-<li>
-قد تخضع المعلومات للتحديث وفق ما يصدر رسميًا من الكلية أو الجامعة.
-</li>
-
-<li>
-في حال وجود استفسارات إضافية، يرجى التواصل مع المسؤولين المختصين.
-</li>
-
+<li>المعادن وخصائصها.</li>
+<li>الصخور وأنواعها.</li>
+<li>العمليات الجيولوجية.</li>
+<li>تاريخ الأرض.</li>
+<li>التراكيب الجيولوجية الأساسية.</li>
 </ul>
-
-</section>
 
 </div>
 
 
+
+<div class="tab-panel">
+
+<ul>
+<li>التعرف على المعادن والصخور.</li>
+<li>فهم العمليات الجيولوجية.</li>
+<li>تفسير الظواهر الجيولوجية.</li>
+<li>استخدام المصطلحات الجيولوجية.</li>
+</ul>
+
+</div>
+
+<div class="tab-panel">
+
+<p>
+لا يوجد متطلب سابق.
+</p>
+
+</div>
+
+<a href="#.html"
+class="course-btn">
+
+عرض تفاصيل المقرر
+
+</a>
+
+</div>
+
+<div class="course-image">
+
+<img src="TST.PNG">
+
+</div>
+</div>
+
+<!-- ===== مقرر 2 ===== -->
+
+<div class="course-card">
+<div class="course-info">
+<div class="course-title">
+
+<img src="geo1.png" class="course-icon">
+
+<h2>مقرر </h2>
+</div>
+
+<span>#</span>
+
+<div class="course-details">
+<div>ساعات #</div>
+<div>#</div>
+<div>المستوى #</div>
+<div>3</div>
+
+</div>
+</div>
+
+<div class="course-content">
+<div class="course-tabs">
+
+<button class="tab-btn active">
+وصف المقرر
+</button>
+
+<button class="tab-btn">
+الموضوعات الرئيسية
+</button>
+
+<button class="tab-btn">
+المهارات المكتسبة
+</button>
+
+<button class="tab-btn">
+المتطلبات السابقة
+</button>
+
+</div>
+
+<div class="tab-panel active">
+
+<p>
+وصف
+
+</div>
+
+<div class="tab-panel">
+
+<ul>
+<li>المعادن وخصائصها.</li>
+<li>الصخور وأنواعها.</li>
+<li>العمليات الجيولوجية.</li>
+<li>تاريخ الأرض.</li>
+<li>التراكيب الجيولوجية الأساسية.</li>
+</ul>
+
+</div>
+
+
+<div class="tab-panel">
+
+<ul>
+<li>التعرف على المعادن والصخور.</li>
+<li>فهم العمليات الجيولوجية.</li>
+<li>تفسير الظواهر الجيولوجية.</li>
+<li>استخدام المصطلحات الجيولوجية.</li>
+</ul>
+
+</div>
+
+<div class="tab-panel">
+
+<p>
+متطلب
+</p>
+
+</div>
+
+<a href="#.html"
+class="course-btn">
+عرض تفاصيل المقرر
+</a>
+
+</div>
+
+<div class="course-image">
+
+<img src="#.PNG">
+
+</div>
+</div>
+<!-- ===== مقرر 3 ===== -->
+
+<div class="course-card">
+<div class="course-info">
+<div class="course-title">
+
+<img src="geo1.png" class="course-icon">
+
+<h2>مقرر </h2>
+</div>
+
+<span>#</span>
+
+<div class="course-details">
+<div>ساعات #</div>
+<div>#</div>
+<div>المستوى #</div>
+<div>3</div>
+
+</div>
+</div>
+
+<div class="course-content">
+<div class="course-tabs">
+
+<button class="tab-btn active">
+وصف المقرر
+</button>
+
+<button class="tab-btn">
+الموضوعات الرئيسية
+</button>
+
+<button class="tab-btn">
+المهارات المكتسبة
+</button>
+
+<button class="tab-btn">
+المتطلبات السابقة
+</button>
+
+</div>
+
+<div class="tab-panel active">
+
+<p>
+وصف
+
+</div>
+
+<div class="tab-panel">
+
+<ul>
+<li>المعادن وخصائصها.</li>
+<li>الصخور وأنواعها.</li>
+<li>العمليات الجيولوجية.</li>
+<li>تاريخ الأرض.</li>
+<li>التراكيب الجيولوجية الأساسية.</li>
+</ul>
+
+</div>
+
+
+<div class="tab-panel">
+
+<ul>
+<li>التعرف على المعادن والصخور.</li>
+<li>فهم العمليات الجيولوجية.</li>
+<li>تفسير الظواهر الجيولوجية.</li>
+<li>استخدام المصطلحات الجيولوجية.</li>
+</ul>
+
+</div>
+
+<div class="tab-panel">
+
+<p>
+متطلب
+</p>
+
+</div>
+
+<a href="#.html"
+class="course-btn">
+عرض تفاصيل المقرر
+</a>
+
+</div>
+
+<div class="course-image">
+
+<img src="#.PNG">
+
+</div>
+</div>
+<!-- ===== مقرر 4 ===== -->
+
+<div class="course-card">
+<div class="course-info">
+<div class="course-title">
+
+<img src="geo1.png" class="course-icon">
+
+<h2>مقرر </h2>
+</div>
+
+<span>#</span>
+
+<div class="course-details">
+<div>ساعات #</div>
+<div>#</div>
+<div>المستوى #</div>
+<div>3</div>
+
+</div>
+</div>
+
+<div class="course-content">
+<div class="course-tabs">
+
+<button class="tab-btn active">
+وصف المقرر
+</button>
+
+<button class="tab-btn">
+الموضوعات الرئيسية
+</button>
+
+<button class="tab-btn">
+المهارات المكتسبة
+</button>
+
+<button class="tab-btn">
+المتطلبات السابقة
+</button>
+
+</div>
+
+<div class="tab-panel active">
+
+<p>
+وصف
+
+</div>
+
+<div class="tab-panel">
+
+<ul>
+<li>المعادن وخصائصها.</li>
+<li>الصخور وأنواعها.</li>
+<li>العمليات الجيولوجية.</li>
+<li>تاريخ الأرض.</li>
+<li>التراكيب الجيولوجية الأساسية.</li>
+</ul>
+
+</div>
+
+
+<div class="tab-panel">
+
+<ul>
+<li>التعرف على المعادن والصخور.</li>
+<li>فهم العمليات الجيولوجية.</li>
+<li>تفسير الظواهر الجيولوجية.</li>
+<li>استخدام المصطلحات الجيولوجية.</li>
+</ul>
+
+</div>
+
+<div class="tab-panel">
+
+<p>
+متطلب
+</p>
+
+</div>
+
+<a href="#.html"
+class="course-btn">
+عرض تفاصيل المقرر
+</a>
+
+</div>
+
+<div class="course-image">
+
+<img src="#.PNG">
+
+</div>
+</div>
+<!-- ===== مقرر 5 ===== -->
+
+<div class="course-card">
+<div class="course-info">
+<div class="course-title">
+
+<img src="geo1.png" class="course-icon">
+
+<h2>مقرر </h2>
+</div>
+
+<span>#</span>
+
+<div class="course-details">
+<div>ساعات #</div>
+<div>#</div>
+<div>المستوى #</div>
+<div>3</div>
+
+</div>
+</div>
+
+<div class="course-content">
+<div class="course-tabs">
+
+<button class="tab-btn active">
+وصف المقرر
+</button>
+
+<button class="tab-btn">
+الموضوعات الرئيسية
+</button>
+
+<button class="tab-btn">
+المهارات المكتسبة
+</button>
+
+<button class="tab-btn">
+المتطلبات السابقة
+</button>
+
+</div>
+
+<div class="tab-panel active">
+
+<p>
+وصف
+
+</div>
+
+<div class="tab-panel">
+
+<ul>
+<li>المعادن وخصائصها.</li>
+<li>الصخور وأنواعها.</li>
+<li>العمليات الجيولوجية.</li>
+<li>تاريخ الأرض.</li>
+<li>التراكيب الجيولوجية الأساسية.</li>
+</ul>
+
+</div>
+
+
+<div class="tab-panel">
+
+<ul>
+<li>التعرف على المعادن والصخور.</li>
+<li>فهم العمليات الجيولوجية.</li>
+<li>تفسير الظواهر الجيولوجية.</li>
+<li>استخدام المصطلحات الجيولوجية.</li>
+</ul>
+
+</div>
+
+<div class="tab-panel">
+
+<p>
+متطلب
+</p>
+
+</div>
+
+<a href="#.html"
+class="course-btn">
+عرض تفاصيل المقرر
+</a>
+
+</div>
+
+<div class="course-image">
+
+<img src="#.PNG">
+
+</div>
+</div>
+
+</section>
 </div>
 
 <footer>
@@ -1281,65 +1660,86 @@ else{
 menu.style.display="block";
 }
 }
+/* ===========================
+   Course Tabs
+=========================== */
+
+const courseCards =
+document.querySelectorAll(".course-card");
+
+courseCards.forEach(card=>{
+
+const buttons =
+card.querySelectorAll(".tab-btn");
+
+const panels =
+card.querySelectorAll(".tab-panel");
 
 
-/* Accordion */
+buttons.forEach((button,index)=>{
 
-const questions =
-document.querySelectorAll(".faq-question");
+button.addEventListener("click",()=>{
 
-questions.forEach(question=>{
 
-question.addEventListener("click",()=>{
+buttons.forEach(btn=>
+btn.classList.remove("active"));
 
-const answer =
-question.nextElementSibling;
+panels.forEach(panel=>
+panel.classList.remove("active"));
 
-const icon =
-question.querySelector("span");
 
-if(answer.style.maxHeight){
+button.classList.add("active");
 
-answer.style.maxHeight = null;
+panels[index].classList.add("active");
 
-icon.textContent = "+";
-}
-else{
-
-answer.style.maxHeight =
-answer.scrollHeight + "px";
-
-icon.textContent = "−";
-}
+});
 
 });
 
 });
 
 
-/* Modal */
 
-function openModal(id){
-document.getElementById(id).style.display="flex";
-}
+/* ===========================
+   Scroll Reveal
+=========================== */
 
-function closeModal(id){
-document.getElementById(id).style.display="none";
-}
+const revealCards =
+document.querySelectorAll(".course-card");
 
 
-/* Close Modal Outside */
+const observer =
+new IntersectionObserver(entries=>{
 
-window.addEventListener("click",function(e){
+entries.forEach(entry=>{
 
-document.querySelectorAll(".modal-overlay")
-.forEach(function(modal){
+if(entry.isIntersecting){
 
-if(e.target===modal){
-modal.style.display="none";
+entry.target.style.opacity="1";
+
+entry.target.style.transform=
+"translateY(0)";
+
 }
 
 });
+
+},{
+threshold:.15
+});
+
+
+revealCards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform=
+"translateY(50px)";
+
+card.style.transition=
+".8s ease";
+
+observer.observe(card);
 
 });
 

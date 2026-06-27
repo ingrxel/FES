@@ -18,8 +18,9 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Tahoma,sans-serif;
+font-family:"Times New Roman",serif;
 }
+
 
 .background-design{
 position:fixed;
@@ -248,8 +249,7 @@ color:#0B5D3B;
 margin-top:2px;
 }
 
-.welcome-toast p{
-font-family:"Times New Roman",serif;
+.welcome-toast p{ 
 font-weight:700;
 font-size:14px;
 line-height:1.8;
@@ -339,7 +339,6 @@ margin:0 auto;
 }
 
 .university{
-font-family:"Times New Roman",serif;
 font-size:clamp(9px,1vw,11px);
 font-weight:700;
 color:#0B5D3B;
@@ -347,7 +346,6 @@ margin-top:px;
 }
 
 .college{
-font-family:"Times New Roman",serif;
 font-size:clamp(7px,0.8vw,9px);
 color:#3D7A5C;
 }
@@ -391,7 +389,7 @@ cursor:pointer;
 display:block;
 padding:15px 25px;
 text-decoration:none;
-font-family:"Times New Roman",serif;
+ 
 color:#124c7c;
 font-size:14px;
 border-bottom:1px solid #eee;
@@ -420,7 +418,7 @@ background:#f3f3f3;
 display:block;
 flex:1;
 text-decoration:none;
-font-family:"Times New Roman",serif;
+ 
 font-size:14px;
 color:#124c7c;
 }
@@ -475,7 +473,7 @@ width:95%;
 margin:0;
 padding:0;
 font-size:14px;
-font-family:"Times New Roman",serif;
+ 
 color:#124c7c;
 text-decoration:none;
 transition:.2s;
@@ -512,7 +510,7 @@ opacity:.7;
 }
 
 .hero-slogan{
-font-family:"Times New Roman",serif;
+ 
 font-size:clamp(12px,1vw,15px);
 font-weight:700;
 color:#0B5D3B;
@@ -547,7 +545,6 @@ text-align:center;
 }
 
 .hero-search h1{
-font-family:"Times New Roman",serif;
 font-size:38px;
 color:#0B5D3B;
 margin-bottom:25px;
@@ -568,7 +565,7 @@ border-radius:999px;
 background:#eef8f0;
 padding-right:65px;
 padding-left:25px;
-font-family:"Times New Roman",serif;
+ 
 font-size:25px;
 outline:none;
 box-shadow:0 2px 10px rgba(0,0,0,.08);
@@ -583,7 +580,48 @@ transform:translateY(-50%);
 font-size:20px;
 color:#0B5D3B;
 }
+#searchSuggestions{
 
+position:absolute;
+
+top:110%;
+
+right:0;
+
+width:100%;
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+overflow:hidden;
+
+display:none;
+
+z-index:9999;
+}
+
+.suggestion-item{
+
+padding:18px 25px;
+
+cursor:pointer;
+
+font-size:18px;
+
+color:#0B5D3B;
+
+transition:.3s;
+
+border-bottom:1px solid #f0f0f0;
+}
+
+.suggestion-item:hover{
+
+background:#f7faf8;
+}
 /* BUTTONS SECTION */
 
 .buttons-section{
@@ -598,7 +636,7 @@ color:#0B5D3B;
 padding:16px 60px;
 border-radius:999px;
 text-decoration:none;
-font-family:"Times New Roman",serif;
+ 
 font-size:18px;
 font-weight:700;
 margin-bottom:25px;
@@ -635,7 +673,7 @@ color:#0B5D3B;
 padding:15px;
 border-radius:999px;
 text-decoration:none;
-font-family:"Times New Roman",serif;
+ 
 font-size:16px;
 font-weight:600;
 box-shadow:0 2px 8px rgba(0,0,0,.06);
@@ -655,7 +693,7 @@ text-align:center;
 }
 
 .quick-links-title{
-font-family:"Times New Roman",serif;
+ 
 font-size:14px;
 font-weight:700;
 color:#0B5D3B;
@@ -698,7 +736,6 @@ margin:auto;
 
 .icon-text{
 margin-top:10px;
-font-family:"Times New Roman",serif;
 font-size:11px;
 font-weight:600;
 color:#0B5D3B;
@@ -819,7 +856,6 @@ transform:rotate(35deg);
 }
 
 footer p{
-font-family:"Times New Roman",serif;
 margin:0;
 }
 
@@ -918,7 +954,6 @@ color:rgba(255,255,255,0.55);
 <!-- SIDEBAR -->
 
 <div class="sidebar" id="sidebar">
-
 <div class="close-btn" onclick="closeMenu()">
 ✕
 </div>
@@ -951,7 +986,7 @@ onclick="toggleDepartments()"></i>
 <a href="FLD/FLD.html">الــرحلات الحــقــليــة</a>
 <a href="EMPLY/EMPLY.html">مجـلات و إحصائيات الــتوظــيـف</a>
 <a href="FRSTYR/FRSTYR.html">الــسنة التــحضيــريــية</a>
-<a href="#">مــقررات الــكليــة</a>
+<a href="/CURS/CURS.html">مــقررات الــكليــة</a>
 <a href="ADMSN/ADMSN.html">القــبـــول</a>
 <a href="TRNSFR/TRNSFR.html">التـحويـل</a>
 <a href="STUDY/STUDY.html">الــدراســة والخــطــة الــدراســية</a>
@@ -967,7 +1002,6 @@ onclick="toggleDepartments()"></i>
 <a href="#">الحساب الرسمي</a>
 
 </div>
-
 </div>
 
 
@@ -1002,9 +1036,9 @@ onclick="toggleDepartments()"></i>
 
 <input
 type="text"
-id="searchBox"
-placeholder="ابــحــث عـن ..."
->
+id="searchInput"
+placeholder="ابــحــث عـن ...">
+<div id="searchSuggestions"></div>
 
 </div>
 
@@ -1022,7 +1056,7 @@ placeholder="ابــحــث عـن ..."
 <a href="FLD/FLD.html">الــرحلات الحــقــليــة</a>
 <a href="EMPLY/EMPLY.html">مجـلات و إحصائيات الــتوظــيـف</a>
 <a href="FRSTYR/FRSTYR.html">الــسنة التــحضيــريــية</a>
-<a href="#">مــقررات الــكليــة</a>
+<a href="CURS/CURS.html">مــقررات الــكليــة</a>
 <a href="ADMSN/ADMSN.html">القــبـــول </a>
 <a href="TRNSFR/TRNSFR.html">التـحويـل</a>
 <a href="STUDY/STUDY.html">الــدراســة والخــطــة الــدراســية</a>
@@ -1130,6 +1164,340 @@ else{
 menu.style.display="block";
 }
 }
+const searchDatabase = [
+
+{
+title:"نبذة عن الكلية",
+url:"ABT/ABT.html",
+keywords:[
+"نبذة",
+"عن الكلية",
+"تاريخ الكلية",
+"تأسيس الكلية",
+"كلية علوم الأرض",
+"متى تأسست",
+"معلومات عن الكلية",
+"نشأة الكلية",
+"تعريف الكلية",
+"الرؤية",
+"الرسالة",
+"الأهداف"
+]
+},
+
+{
+title:"القبول",
+url:"ADMSN/ADMSN.html",
+keywords:[
+"قبول",
+"التقديم",
+"التسجيل",
+"شروط القبول",
+"الموزونة",
+"النسبة الموزونة",
+"كم الموزونة",
+"كم نسبة القبول",
+"كيف أسجل",
+"كيف أقدم",
+"التحاق",
+"دخول الكلية",
+"مقاعد",
+"القبول المباشر",
+"شروط التسجيل",
+"القبول الجامعي"
+]
+},
+
+{
+title:"التحويل",
+url:"TRNSFR/TRNSFR.html",
+keywords:[
+"تحويل",
+"التحويل الداخلي",
+"شروط التحويل",
+"كيف أحول",
+"الانتقال للكلية",
+"التحويل لكلية علوم الأرض",
+"التحويل من كلية",
+"تحويل تخصص",
+"فتح التحويل",
+"موعد التحويل"
+]
+},
+
+{
+title:"الأقسام العلمية",
+url:"DEP/DEP.html",
+keywords:[
+"الأقسام",
+"التخصصات",
+"تخصصات الكلية",
+"الأقسام العلمية",
+"ما هي التخصصات",
+"ما هي الأقسام",
+"التخصصات المتاحة",
+"تخصص",
+"قسم"
+]
+},
+
+{
+title:"الدراسة والخطة الدراسية",
+url:"STUDY/STUDY.html",
+keywords:[
+"الدراسة",
+"الخطة الدراسية",
+"مدة الدراسة",
+"عدد السنوات",
+"كم سنة",
+"السنة الأولى",
+"السنة الثانية",
+"المرحلة المشتركة",
+"الخطة",
+"المستويات",
+"الدراسة في الكلية",
+"طبيعة الدراسة"
+]
+},
+
+{
+title:"السنة التحضيرية",
+url:"FRSTYR/FRSTYR.html",
+keywords:[
+"السنة التحضيرية",
+"التحضيري",
+"السنة الأولى",
+"المرحلة المشتركة",
+"المقررات المشتركة",
+"مقررات التحضيري"
+]
+},
+
+{
+title:"المقررات الدراسية",
+url:"CURS/CURS.html",
+keywords:[
+"المقررات",
+"الخطة",
+"المواد",
+"المقررات الدراسية",
+"مواد الكلية",
+"مواد الجيولوجيا",
+"المواد الدراسية",
+"الخطة الأكاديمية"
+]
+},
+
+{
+title:"الرحلات الحقلية",
+url:"FLD/FLD.html",
+keywords:[
+"الرحلات",
+"الرحلات الحقلية",
+"العمل الميداني",
+"الدراسات الحقلية",
+"التدريب الميداني",
+"الرحلات العلمية",
+"الحقل"
+]
+},
+
+{
+title:"مجالات وإحصائيات التوظيف",
+url:"EMPLY/EMPLY.html",
+keywords:[
+"التوظيف",
+"الوظائف",
+"مجالات العمل",
+"فرص العمل",
+"جهات التوظيف",
+"الإحصائيات",
+"الخريجين",
+"سوق العمل",
+"ماذا أعمل بعد التخرج",
+"الوظائف المستقبلية"
+]
+},
+
+{
+title:"الأسئلة الأكثر شيوعًا",
+url:"QSN/QSN.html",
+keywords:[
+"الأسئلة الشائعة",
+"الأسئلة الأكثر شيوعًا",
+"استفسارات",
+"الأسئلة",
+"الاستفسارات",
+"مساعدة"
+]
+},
+
+{
+title:"قسم الجيولوجيا الهندسية والبيئية",
+url:"ENVI/ENVI.html",
+keywords:[
+"الجيولوجيا الهندسية",
+"الجيولوجيا البيئية",
+"البيئة",
+"الجيولوجيا الهندسية والبيئية"
+]
+},
+
+{
+title:"قسم تقنيات الاستكشاف الجيولوجي",
+url:"EXPL/EXPL.html",
+keywords:[
+"الاستكشاف",
+"تقنيات الاستكشاف",
+"الاستكشاف الجيولوجي",
+"الاستكشافات"
+]
+},
+
+{
+title:"قسم الجيوفيزياء",
+url:"GEPHY/GEPHY.html",
+keywords:[
+"الجيوفيزياء",
+"جيوفيزياء",
+"الفيزياء الأرضية"
+]
+},
+
+{
+title:"قسم جيولوجيا المياه",
+url:"HYDRO/HYDRO.html",
+keywords:[
+"جيولوجيا المياه",
+"المياه",
+"المياه الجوفية",
+"الهيدروجيولوجيا"
+]
+},
+
+{
+title:"قسم الثروة المعدنية والصخور",
+url:"MINROK/MINROK.html",
+keywords:[
+"الثروة المعدنية",
+"الصخور",
+"المعادن",
+"الخامات المعدنية"
+]
+},
+
+{
+title:"قسم الجيولوجيا البنائية والاستشعار عن بعد",
+url:"STRUC/STRUC.html",
+keywords:[
+"الجيولوجيا البنائية",
+"الاستشعار عن بعد",
+"البنائية",
+"GIS",
+"نظم المعلومات الجغرافية",
+"الاستشعار"
+]
+}
+
+];
+
+const searchInput =
+document.getElementById("searchInput");
+
+const suggestionsBox =
+document.getElementById("searchSuggestions");
+
+
+searchInput.addEventListener("input",()=>{
+
+const value =
+searchInput.value
+.trim()
+.toLowerCase();
+
+suggestionsBox.innerHTML="";
+
+
+if(value===""){
+
+suggestionsBox.style.display="none";
+
+return;
+
+}
+
+
+const results = searchDatabase.filter(page=>{
+
+const allText =
+
+page.title.toLowerCase()+" "+
+
+page.keywords.join(" ").toLowerCase();
+
+
+return allText.includes(value) ||
+
+value.split(" ").some(word=>
+
+allText.includes(word));
+
+});
+
+
+if(results.length===0){
+
+suggestionsBox.innerHTML=`
+
+<div class="suggestion-item">
+
+لا توجد نتائج
+
+</div>`;
+
+suggestionsBox.style.display="block";
+
+return;
+
+}
+
+
+results.forEach(page=>{
+
+const item =
+
+document.createElement("div");
+
+item.className="suggestion-item";
+
+item.innerHTML = page.title;
+
+item.onclick=()=>{
+
+window.location.href = page.url;
+
+};
+
+suggestionsBox.appendChild(item);
+
+});
+
+
+suggestionsBox.style.display="block";
+
+});
+
+
+
+document.addEventListener("click",(e)=>{
+
+if(!e.target.closest(".search-box")){
+
+suggestionsBox.style.display="none";
+
+}
+
+});
 
 </script>
 
