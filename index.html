@@ -4,6 +4,7 @@
 <head>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -741,6 +742,219 @@ font-weight:600;
 color:#0B5D3B;
 }
 
+/* ABOUT TEAM */
+
+.about-team{
+width:min(950px,90%);
+margin:80px auto;
+padding:45px 30px;
+
+background:rgba(255,255,255,.6);
+backdrop-filter:blur(8px);
+
+border-radius:30px;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+text-align:center;
+}
+
+.about-team h2{
+font-size:32px;
+color:#0B5D3B;
+margin-bottom:25px;
+}
+
+.about-intro{
+font-size:18px;
+line-height:2;
+color:#4a5b50;
+
+max-width:800px;
+margin:0 auto 35px auto;
+}
+
+.team-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.team-btn{
+padding:15px 35px;
+
+border:none;
+border-radius:999px;
+
+background:#edf8ee;
+color:#0B5D3B;
+
+font-size:17px;
+font-weight:700;
+
+cursor:pointer;
+text-decoration:none;
+
+transition:.3s;
+}
+
+.team-btn:hover{
+transform:translateY(-3px);
+background:#dff0e2;
+}
+
+.team-note{
+margin-top:35px;
+font-size:14px;
+line-height:1.8;
+color:#666;
+}
+
+
+/* MODAL */
+
+.modal-overlay{
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+z-index:5000;
+}
+
+.modal-card{
+width:min(500px,95%);
+
+border-radius:28px;
+
+padding:5px;
+
+background:linear-gradient(
+135deg,
+#0B5D3B,
+#3D7A5C,
+#124c7c
+);
+}
+
+.modal-bg{
+
+padding:40px 30px;
+
+border-radius:24px;
+
+/* ضعي صورتك هنا لاحقاً */
+background:
+linear-gradient(
+rgba(255,255,255,.82),
+rgba(255,255,255,.82)
+),
+url("MOUNT.PNG");
+
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
+
+backdrop-filter:blur(3px);
+
+text-align:center;
+}
+
+.profile-img{
+width:130px;
+height:130px;
+
+border-radius:50%;
+object-fit:cover;
+
+border:5px solid white;
+
+margin-bottom:18px;
+}
+
+.modal-bg h3{
+font-family:'Cormorant Garamond', serif;
+font-size:32px;
+font-weight:700;
+color:#4E8B6A;
+letter-spacing:1px;
+}
+.modal-bio{
+color:#355a47;
+font-family:'Cormorant Garamond', serif;
+
+line-height:1.9;
+margin-bottom:25px;
+}
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-bottom:25px;
+}
+
+.social-icons a{
+width:50px;
+height:50px;
+
+border-radius:50%;
+background:rgba(255,255,255,.2);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:#5F9C7A;
+font-size:22px;
+
+text-decoration:none;
+}
+
+.close-modal{
+width:100%;
+
+padding:14px;
+
+border:none;
+border-radius:14px;
+
+background:#0B5D3B;
+color:white;
+
+font-size:16px;
+font-weight:700;
+
+cursor:pointer;
+}
+
+@media(max-width:600px){
+
+.about-team{
+padding:35px 20px;
+}
+
+.about-intro{
+font-size:16px;
+}
+
+.modal-bg{
+padding:30px 20px;
+}
+
+.profile-img{
+width:110px;
+height:110px;
+}
+
+}
+
 /* FOOTER */
 
 footer{
@@ -1096,6 +1310,78 @@ placeholder="ابــحــث عـن ...">
 
 </section>
 
+<!-- ABOUT TEAM -->
+
+<section class="about-team">
+
+<h2>من نحن؟</h2>
+
+<p class="about-intro">
+تم تطوير هذا الموقع كمبادرة طلابية مستقلة تهدف إلى تسهيل وصول طلاب كلية علوم الأرض إلى المعلومات الأكاديمية والمهنية، وتوفير منصة رقمية تجمع أهم المعلومات المتعلقة بالكلية في مكان واحد.
+</p>
+
+<div class="team-buttons">
+
+<button class="team-btn" onclick="openModal()">
+ريتال عبد المنان
+</button>
+
+<a href="ضع_رابط_محمد_هنا"
+target="_blank"
+class="team-btn">
+محمد خبراني
+</a>
+
+</div>
+
+<p class="team-note">
+تنويه: هذا الموقع عبارة عن مشروع واجتهاد طلابي مستقل، ولا يمثل الموقع الرسمي للكلية أو الجامعة.
+</p>
+
+</section>
+
+
+<!-- MODAL -->
+
+<div class="modal-overlay" id="retalModal">
+
+<div class="modal-card">
+
+<div class="modal-bg">
+
+<img src="retal-photo.png"
+class="profile-img">
+
+<h3>
+ريتال عبدالمنان
+</h3>
+
+<p class="modal-bio">
+اكتبي هنا نبذة مختصرة عنك.
+</p>
+
+<div class="social-icons">
+
+<a href="mailto:remannan@outlook.sa">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="ضع_رابط_لينكدإن_هنا"
+target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+<button class="close-modal"
+onclick="closeModal()">
+إغلاق
+</button>
+
+</div>
+</div>
+</div>
+
 <footer>
 
 <div class="footer-shape shape1"></div>
@@ -1372,6 +1658,27 @@ document.addEventListener("click",(e)=>{
 if(!e.target.closest(".search-box")){
 suggestionsBox.style.display="none";
 }
+});
+
+function openModal(){
+document.getElementById("retalModal")
+.style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("retalModal")
+.style.display="none";
+}
+
+window.addEventListener("click",function(e){
+
+let modal =
+document.getElementById("retalModal");
+
+if(e.target===modal){
+modal.style.display="none";
+}
+
 });
 
 </script>
