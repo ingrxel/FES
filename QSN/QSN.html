@@ -425,9 +425,7 @@ transition:.2s;
 background:#f3f3f3;
 }
 
-/* ===========================
-   عنوان الصفحة
-=========================== */
+/*  عنوان الصفحة */
 
 .faq-hero{
 text-align:center;
@@ -450,9 +448,7 @@ color:#555;
 
 
 
-/* ===========================
-   Accordion
-=========================== */
+/*  Accordion */
 
 .faq-section{
 width:100%;
@@ -498,18 +494,19 @@ transition:max-height .4s ease;
 padding:0 30px;
 }
 
-.faq-answer p{
+.faq-answer p,
+.faq-answer ul{
 padding-bottom:30px;
 line-height:2.1;
-font-size:17px;
-color:#555;
+}
+
+.faq-answer ul{
+padding-right:25px;
 }
 
 
 
-/* ===========================
-   التواصل
-=========================== */
+/* التواصل */
 
 .contact-section{
 text-align:center;
@@ -556,9 +553,7 @@ color:white;
 
 
 
-/* ===========================
-   Modal
-=========================== */
+/*  Modal */
 
 .modal-overlay{
 position:fixed;
@@ -670,9 +665,7 @@ transform:translateY(-4px);
 
 
 
-/* ===========================
-   معلومات مهمة
-=========================== */
+/*   معلومات مهمة */
 
 .important-info{
 width:min(1000px,95%);
@@ -970,13 +963,9 @@ onclick="toggleDepartments()"></i>
 
 </section>
 
-
-<!-- الأسئلة الشائعة -->
-
 <section class="faq-section">
 
 <div class="faq-item">
-
 <button class="faq-question">
 ما هي شروط القبول في كلية علوم الأرض؟
 <span>+</span>
@@ -986,14 +975,17 @@ onclick="toggleDepartments()"></i>
 <p>
 تخضع شروط القبول لأنظمة وسياسات القبول المعتمدة من الجامعة، ويتم الإعلان عنها رسميًا عبر الجهات المختصة.
 </p>
-</div>
 
+<ul>
+<li>أن يكون المتقدم حاصلًا على شهادة الثانوية العامة (المسار العلمي) أو ما يعادلها.</li>
+<li>استيفاء جميع متطلبات القبول الجامعي المعلنة.</li>
+<li>الحصول على موزونة لا تقل عن 85% للدخول في المفاضلة، ولن يتم إدخال المتقدمين الحاصلين على موزونة أقل من ذلك ضمن المنافسة على المقاعد المتاحة.</li>
+</ul>
 </div>
-
+</div>
 
 
 <div class="faq-item">
-
 <button class="faq-question">
 هل يوجد تحويل إلى الكلية؟
 <span>+</span>
@@ -1001,16 +993,31 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-حتى الآن لا يوجد إعلان رسمي يؤكد فتح باب التحويل إلى كلية علوم الأرض، وينصح بمتابعة الإعلانات الرسمية باستمرار.
+حتى الآن لا يوجد إعلان رسمي يؤكد فتح باب التحويل إلى كلية علوم الأرض لهذا العام (2027)، وينصح بمتابعة الإعلانات الرسمية باستمرار.
 </p>
 </div>
-
 </div>
-
 
 
 <div class="faq-item">
+<button class="faq-question">
+ما هي شروط التحويل إلى الكلية في حال تم فتح التحويل مستقبلًا؟
+<span>+</span>
+</button>
 
+<div class="faq-answer">
+<ul>
+<li>استيفاء شروط التحويل المعتمدة من الجامعة.</li>
+<li>تحقيق الحد الأدنى للمعدل المطلوب للتحويل.</li>
+<li>توفر مقاعد شاغرة في الكلية.</li>
+<li>اجتياز المفاضلة بين المتقدمين.</li>
+<li>معادلة المقررات الأساسية والعلمية وفق الأنظمة المعتمدة (منها اللغة الإنجليزية بموزونة مرتفعة).</li>
+</ul>
+</div>
+</div>
+
+
+<div class="faq-item">
 <button class="faq-question">
 كم عدد الأقسام الأكاديمية في الكلية؟
 <span>+</span>
@@ -1018,16 +1025,13 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها.
+تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها، يرجى زيارة صفحة الأقسام العلمية.
 </p>
 </div>
-
 </div>
-
 
 
 <div class="faq-item">
-
 <button class="faq-question">
 ما هي الخطة الدراسية للكلية؟
 <span>+</span>
@@ -1035,16 +1039,13 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-تتضمن الخطة الدراسية مقررات أساسية ومخبرية وميدانية تهدف إلى تأهيل الطالب علميًا وعمليًا في مختلف تخصصات علوم الأرض.
+تتضمن الخطة الدراسية مقررات أساسية ومخبرية وميدانية تهدف إلى تأهيل الطالب علميًا وعمليًا في مختلف تخصصات علوم الأرض، يرجى زيارة صفحة الدراسة والخطة الدراسية.
 </p>
 </div>
-
 </div>
-
 
 
 <div class="faq-item">
-
 <button class="faq-question">
 هل تتوفر فرص تدريب ميداني للطلاب؟
 <span>+</span>
@@ -1052,16 +1053,13 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-نعم، توفر الكلية العديد من الرحلات والتدريبات الميدانية التي تعزز الجانب التطبيقي لدى الطلاب.
+نعم، توفر الكلية العديد من الرحلات والتدريبات الميدانية التي تعزز الجانب التطبيقي لدى الطلاب في السنة الـ ...
 </p>
 </div>
-
 </div>
-
 
 
 <div class="faq-item">
-
 <button class="faq-question">
 ما هي مجالات العمل المتاحة للخريجين؟
 <span>+</span>
@@ -1069,16 +1067,61 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-تتنوع مجالات العمل لتشمل قطاع النفط والطاقة، التعدين، البيئة، الاستشارات الجيولوجية، والمجالات الأكاديمية والبحثية.
+تتنوع مجالات العمل لتشمل قطاع النفط والطاقة، التعدين، البيئة، الاستشارات الجيولوجية، والمجالات الأكاديمية والبحثية، يرجى مراجعة صفحة مجالات وإحصائيات التوظيف.
 </p>
 </div>
-
 </div>
-
 
 
 <div class="faq-item">
+<button class="faq-question">
+ما أكثر التخصصات طلبًا من قبل الشركات المتعاونة مع الكلية؟
+<span>+</span>
+</button>
 
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يؤثر التخصص الدقيق على فرص التوظيف، أم أن الشركات توظف جميع الخريجين تحت مسمى جيولوجي؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ماذا يعمل خريج قسم الثروة المعدنية والصخور بعد التخرج؟ وما طبيعة عمله داخل الشركات؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كيف يكون نظام الدوام في قطاع التعدين؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
 <button class="faq-question">
 كيف يمكنني التواصل مع الكلية للاستفسار؟
 <span>+</span>
@@ -1086,15 +1129,220 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>
-يمكن التواصل مع المسؤولين المختصين من خلال خيارات التواصل الموضحة أدناه.
+يمكن التواصل مع المسؤولين المختصين من خلال البحث عن القسم على موقع الجامعة الرسمي، أو يمكن التوجه مباشرة إلى الجامعة في أوقات العمل الرسمية.
 </p>
 </div>
+</div>
 
+<div class="faq-item">
+<button class="faq-question">
+كيف يمكن لطلاب كلية علوم الأرض التخصص في هندسة التعدين؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+#
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل تتم المفاضلة بين جميع الدفعات عند التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا، تتم عملية التخصص لكل دفعة بشكل مستقل، ولا تدخل أي دفعة في منافسة مع الدفعات السابقة أو اللاحقة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+10.	هل يمكن لطلاب دفعة 26 الدراسة بنظام كلية التعدين؟ وهل سيتم احتساب السنة الأولى التي أتموها؟<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+وفق المعلومات المتداولة، فإن ذلك غير ممكن حاليًا، إلا أن جميع المعلومات المتعلقة بهذا الموضوع ما زالت قيد الدراسة من قبل الإدارة وقد تخضع للتغيير مستقبلًا.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كيف هو تخصص الجيولوجيا البنائية والاستشعار عن بعد من حيث الدراسة والمستقبل الوظيفي؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+#
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يتم تحديث الخطط الدراسية بشكل دوري؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+قد تخضع الخطط الدراسية للتحديث والتطوير وفق ما تقرره الكلية والجامعة، وينصح دائمًا بمتابعة الإعلانات الرسمية لمعرفة أي مستجدات.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يؤثر المعدل الدراسي على فرص التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، يعتمد التخصص على المفاضلة بين الطلاب، لذلك فإن الحصول على معدل مرتفع يزيد من فرص الالتحاق بالتخصصات المطلوبة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما متوسط الموزونات المطلوبة عند التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا تنشر الكلية موزونات رسمية للتخصص، حيث تتم عملية المفاضلة بين طلاب الدفعة نفسها، لذلك يعد الحصول على معدل مرتفع أمرًا مهمًا.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل الدراسة في كلية علوم الأرض باللغة العربية أم الإنجليزية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+جميع المقررات الدراسية في كلية علوم الأرض تُدرس باللغة الإنجليزية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كم عدد سنوات الدراسة في كلية علوم الأرض؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تبلغ مدة الدراسة أربع سنوات، تشمل سنتين مشتركتين يليهما سنتان في التخصص، وتتضمن الخطة الدراسية تدريبًا عمليًا وميدانيًا. يرجى مراجعة صفحة الدراسة والخطة الدراسية لمزيد من المعلومات.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما الفرق بين أقسام الكلية المختلفة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+يرجى مراجعة صفحة الأقسام العلمية للاطلاع على نبذة عن كل قسم ومجالاته العلمية والمهنية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما الأدوات التي يحتاجها الطالب خلال الدراسة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا يطلب من الطلاب عادة سوى مستلزمات السلامة الشخصية خلال الرحلات الحقلية المقررة. يرجى مراجعة صفحة الرحلات الحقلية لمزيد من المعلومات.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد فرص تدريب تعاوني أو تدريب صيفي للطلاب؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+#
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد رحلات ميدانية إلزامية خلال الدراسة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، تتطلب بعض المقررات رحلات ميدانية تدريبية خارج الجامعة، يتم خلالها تطبيق المفاهيم والمهارات المكتسبة داخل القاعات الدراسية على أرض الواقع.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يمكن تغيير التخصص داخل الكلية بعد التخصيص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، يمكن ذلك وفق الأنظمة والضوابط المعتمدة من الكلية والجامعة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد فرص ابتعاث أو تدريب خارجي للطلاب؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+#
+</p>
+</div>
 </div>
 
 </section>
-
-
 
 <!-- التواصل -->
 
@@ -1292,22 +1540,18 @@ questions.forEach(question=>{
 
 question.addEventListener("click",()=>{
 
-const answer =
-question.nextElementSibling;
-
-const icon =
-question.querySelector("span");
+const answer = question.nextElementSibling;
+const icon = question.querySelector("span");
 
 if(answer.style.maxHeight){
 
 answer.style.maxHeight = null;
-
 icon.textContent = "+";
-}
-else{
+
+}else{
 
 answer.style.maxHeight =
-answer.scrollHeight + "px";
+(answer.scrollHeight + 40) + "px";
 
 icon.textContent = "−";
 }
