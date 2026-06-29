@@ -350,6 +350,62 @@ position:relative;
 right:0;
 }
 
+/* LINKS MODAL */
+
+.links-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:5000;
+}
+
+.links-card{
+width:min(500px,95%);
+background:white;
+border-radius:30px;
+padding:35px 30px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+position:relative;
+text-align:center;
+}
+
+.links-card h2{
+color:#0B5D3B;
+margin-bottom:30px;
+font-size:30px;
+}
+
+.close-links{
+position:absolute;
+top:20px;
+left:20px;
+font-size:26px;
+cursor:pointer;
+color:#124c7c;
+}
+
+.link-box{
+display:block;
+padding:18px;
+margin-bottom:15px;
+background:#edf8ee;
+border-radius:18px;
+text-decoration:none;
+color:#0B5D3B;
+font-size:18px;
+font-weight:700;
+transition:.3s;
+}
+
+.link-box:hover{
+background:#dff0e2;
+transform:translateY(-3px);
+}
+
 /* DROPDOWN */
 
 .dropdown-btn{
@@ -450,6 +506,25 @@ color:#555;
 
 /*  Accordion */
 
+.faq-category{
+width: fit-content;
+margin: 4rem auto 2rem;
+padding: .9rem 2.5rem;
+
+background: linear-gradient(135deg,#0B5D3B,#1e7a52);
+
+color: white;
+
+font-size: clamp(1.3rem,2vw,1.8rem);
+font-weight: 700;
+
+border-radius: 50px;
+
+box-shadow: 0 8px 25px rgba(11,93,59,.18);
+
+text-align: center;
+letter-spacing: .5px;
+}
 .faq-section{
 width:100%;
 max-width:1400px;
@@ -942,10 +1017,42 @@ onclick="toggleDepartments()"></i>
 
 <div class="sidebar-divider"></div>
 
-<a href="#">الحساب الرسمي</a>
+<a href="javascript:void(0)"
+onclick="closeMenu(); openLinksModal()">
+روابط مهمة
+</a>
+
+</div></div>
+<div class="links-modal" id="linksModal">
+
+<div class="links-card">
+
+<div class="close-links"
+onclick="closeLinksModal()">
+✕
+</div>
+
+<h2>روابط مهمة</h2>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+الموقع الرسمي للكلية
+</a>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+بوابة الخدمات الإلكترونية
+</a>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+منصة بلاك بورد
+</a>
 
 </div>
+
 </div>
+
 
 <div class="content">
 
@@ -963,7 +1070,11 @@ onclick="toggleDepartments()"></i>
 
 </section>
 
-<section class="faq-section">
+<!-- ================================= -->
+<!-- القبول والتحويل -->
+<!-- ================================= -->
+
+<h2 class="faq-category">القبول والتحويل</h2>
 
 <div class="faq-item">
 <button class="faq-question">
@@ -1019,17 +1130,66 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-item">
 <button class="faq-question">
-كم عدد الأقسام الأكاديمية في الكلية؟
+هل يتم معادلة المقررات التي سبق للطالب دراستها عند التحويل إلى الكلية؟
 <span>+</span>
 </button>
 
 <div class="faq-answer">
 <p>
-تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها، يرجى زيارة صفحة الأقسام العلمية.
+في حال تم فتح باب التحويل مستقبلًا، تتم معادلة بعض المقررات الأساسية والعلمية وفق الأنظمة والضوابط المعتمدة من الجامعة والكلية.
 </p>
 </div>
 </div>
 
+
+<div class="faq-item">
+<button class="faq-question">
+هل تتم معادلة مقررات اللغة الإنجليزية (الإنجليزي العلمي أو الإنجليزي البيئي) عند التحويل؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لم يعد هناك مقرر لغة انجليزية بيئي لذا ستتم معادلة العلمي كما الطبيعي.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل الدراسة في كلية علوم الأرض باللغة العربية أم الإنجليزية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+جميع المقررات الدراسية في كلية علوم الأرض تُدرس باللغة الإنجليزية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كيف يمكنني التواصل مع الكلية للاستفسار؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+يمكن التواصل مع المسؤولين المختصين من خلال البحث عن القسم على موقع الجامعة الرسمي، أو يمكن التوجه مباشرة إلى الجامعة في أوقات العمل الرسمية.
+</p>
+</div>
+</div>
+
+
+
+<!-- ================================= -->
+<!-- الدراسة والخطة الدراسية -->
+<!-- ================================= -->
+
+<h2 class="faq-category">الدراسة والخطة الدراسية</h2>
 
 <div class="faq-item">
 <button class="faq-question">
@@ -1040,6 +1200,48 @@ onclick="toggleDepartments()"></i>
 <div class="faq-answer">
 <p>
 تتضمن الخطة الدراسية مقررات أساسية ومخبرية وميدانية تهدف إلى تأهيل الطالب علميًا وعمليًا في مختلف تخصصات علوم الأرض، يرجى زيارة صفحة الدراسة والخطة الدراسية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كم عدد سنوات الدراسة في كلية علوم الأرض؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تبلغ مدة الدراسة أربع سنوات، تشمل سنتين مشتركتين يليهما سنتان في التخصص، وتتضمن الخطة الدراسية تدريبًا عمليًا وميدانيًا. يرجى مراجعة صفحة الدراسة والخطة الدراسية لمزيد من المعلومات.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ هل سيتم تحديث الخطط لدفعة 26 ؟ 
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا ، الخطط تختلف لذا لن تتغير وستكمل كل دفعة على الخطة التي تم قبولهم عليها.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد رحلات ميدانية إلزامية خلال الدراسة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، تتطلب بعض المقررات رحلات ميدانية تدريبية خارج الجامعة، يتم خلالها تطبيق المفاهيم والمهارات المكتسبة داخل القاعات الدراسية على أرض الواقع.
 </p>
 </div>
 </div>
@@ -1058,6 +1260,180 @@ onclick="toggleDepartments()"></i>
 </div>
 </div>
 
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد فرص تدريب تعاوني أو تدريب صيفي للطلاب؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل توجد فرص ابتعاث أو تدريب خارجي للطلاب؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما الأدوات التي يحتاجها الطالب خلال الدراسة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا يطلب من الطلاب عادة سوى مستلزمات السلامة الشخصية خلال الرحلات الحقلية المقررة. يرجى مراجعة صفحة الرحلات الحقلية لمزيد من المعلومات.
+</p>
+</div>
+</div>
+
+
+
+<!-- ================================= -->
+<!-- التخصصات الأكاديمية -->
+<!-- ================================= -->
+
+<h2 class="faq-category">التخصصات الأكاديمية</h2>
+
+<div class="faq-item">
+<button class="faq-question">
+كم عدد الأقسام الأكاديمية في الكلية؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+تضم كلية علوم الأرض عدة أقسام أكاديمية تغطي مختلف مجالات علوم الأرض والتطبيقات المرتبطة بها، يرجى زيارة صفحة الأقسام العلمية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما الفرق بين أقسام الكلية المختلفة؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+يرجى مراجعة صفحة الأقسام العلمية للاطلاع على نبذة عن كل قسم ومجالاته العلمية والمهنية.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يؤثر المعدل الدراسي على فرص التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، يعتمد التخصص على المفاضلة بين الطلاب، لذلك فإن الحصول على معدل مرتفع يزيد من فرص الالتحاق بالتخصصات المطلوبة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+ما متوسط الموزونات المطلوبة عند التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا تنشر الكلية موزونات رسمية للتخصص، حيث تتم عملية المفاضلة بين طلاب الدفعة نفسها، لذلك يعد الحصول على معدل مرتفع أمرًا مهمًا.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل تتم المفاضلة بين جميع الدفعات عند التخصص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+لا، تتم عملية التخصص لكل دفعة بشكل مستقل، ولا تدخل أي دفعة في منافسة مع الدفعات السابقة أو اللاحقة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يمكن تغيير التخصص داخل الكلية بعد التخصيص؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+نعم، يمكن ذلك وفق الأنظمة والضوابط المعتمدة من الكلية والجامعة.
+</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كيف يمكن لطلاب كلية الهندسة دفعة 25 و 26  التخصص في هندسة التعدين؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+كيف هو تخصص الجيولوجيا البنائية والاستشعار عن بعد من حيث الدراسة والمستقبل الوظيفي؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>#</p>
+</div>
+</div>
+
+
+<div class="faq-item">
+<button class="faq-question">
+هل يمكن لطلاب دفعة 26 الدراسة بنظام كلية التعدين؟ وهل سيتم احتساب السنة الأولى التي أتموها؟
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+<p>
+وفق المعلومات المتداولة، فإن ذلك غير ممكن حاليًا، إلا أن جميع المعلومات المتعلقة بهذا الموضوع ما زالت قيد الدراسة من قبل الإدارة وقد تخضع للتغيير مستقبلًا.
+</p>
+</div>
+</div>
+
+
+
+<!-- ================================= -->
+<!-- التوظيف والمسار المهني -->
+<!-- ================================= -->
+
+<h2 class="faq-category">التوظيف والمسار المهني</h2>
 
 <div class="faq-item">
 <button class="faq-question">
@@ -1117,228 +1493,6 @@ onclick="toggleDepartments()"></i>
 
 <div class="faq-answer">
 <p>#</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-كيف يمكنني التواصل مع الكلية للاستفسار؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-يمكن التواصل مع المسؤولين المختصين من خلال البحث عن القسم على موقع الجامعة الرسمي، أو يمكن التوجه مباشرة إلى الجامعة في أوقات العمل الرسمية.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-كيف يمكن لطلاب كلية علوم الأرض التخصص في هندسة التعدين؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-#
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل تتم المفاضلة بين جميع الدفعات عند التخصص؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-لا، تتم عملية التخصص لكل دفعة بشكل مستقل، ولا تدخل أي دفعة في منافسة مع الدفعات السابقة أو اللاحقة.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-10.	هل يمكن لطلاب دفعة 26 الدراسة بنظام كلية التعدين؟ وهل سيتم احتساب السنة الأولى التي أتموها؟<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-وفق المعلومات المتداولة، فإن ذلك غير ممكن حاليًا، إلا أن جميع المعلومات المتعلقة بهذا الموضوع ما زالت قيد الدراسة من قبل الإدارة وقد تخضع للتغيير مستقبلًا.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-كيف هو تخصص الجيولوجيا البنائية والاستشعار عن بعد من حيث الدراسة والمستقبل الوظيفي؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-#
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل يتم تحديث الخطط الدراسية بشكل دوري؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-قد تخضع الخطط الدراسية للتحديث والتطوير وفق ما تقرره الكلية والجامعة، وينصح دائمًا بمتابعة الإعلانات الرسمية لمعرفة أي مستجدات.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل يؤثر المعدل الدراسي على فرص التخصص؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-نعم، يعتمد التخصص على المفاضلة بين الطلاب، لذلك فإن الحصول على معدل مرتفع يزيد من فرص الالتحاق بالتخصصات المطلوبة.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-ما متوسط الموزونات المطلوبة عند التخصص؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-لا تنشر الكلية موزونات رسمية للتخصص، حيث تتم عملية المفاضلة بين طلاب الدفعة نفسها، لذلك يعد الحصول على معدل مرتفع أمرًا مهمًا.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل الدراسة في كلية علوم الأرض باللغة العربية أم الإنجليزية؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-جميع المقررات الدراسية في كلية علوم الأرض تُدرس باللغة الإنجليزية.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-كم عدد سنوات الدراسة في كلية علوم الأرض؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-تبلغ مدة الدراسة أربع سنوات، تشمل سنتين مشتركتين يليهما سنتان في التخصص، وتتضمن الخطة الدراسية تدريبًا عمليًا وميدانيًا. يرجى مراجعة صفحة الدراسة والخطة الدراسية لمزيد من المعلومات.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-ما الفرق بين أقسام الكلية المختلفة؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-يرجى مراجعة صفحة الأقسام العلمية للاطلاع على نبذة عن كل قسم ومجالاته العلمية والمهنية.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-ما الأدوات التي يحتاجها الطالب خلال الدراسة؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-لا يطلب من الطلاب عادة سوى مستلزمات السلامة الشخصية خلال الرحلات الحقلية المقررة. يرجى مراجعة صفحة الرحلات الحقلية لمزيد من المعلومات.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل توجد فرص تدريب تعاوني أو تدريب صيفي للطلاب؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-#
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل توجد رحلات ميدانية إلزامية خلال الدراسة؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-نعم، تتطلب بعض المقررات رحلات ميدانية تدريبية خارج الجامعة، يتم خلالها تطبيق المفاهيم والمهارات المكتسبة داخل القاعات الدراسية على أرض الواقع.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل يمكن تغيير التخصص داخل الكلية بعد التخصيص؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-نعم، يمكن ذلك وفق الأنظمة والضوابط المعتمدة من الكلية والجامعة.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-هل توجد فرص ابتعاث أو تدريب خارجي للطلاب؟
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-#
-</p>
 </div>
 </div>
 
@@ -1457,19 +1611,15 @@ class="email-btn">
 </div>
 
 <ul>
-
 <li>
 جميع المعلومات الواردة في هذه الصفحة هي لأغراض إرشادية فقط.
 </li>
-
 <li>
 قد تخضع المعلومات للتحديث وفق ما يصدر رسميًا من الكلية أو الجامعة.
 </li>
-
 <li>
-في حال وجود استفسارات إضافية، يرجى التواصل مع المسؤولين المختصين.
+في حال وجود استفسارات إضافية، يرجى التواصل معنا.
 </li>
-
 </ul>
 
 </section>
@@ -1586,7 +1736,30 @@ modal.style.display="none";
 });
 
 });
+function openLinksModal(){
 
+document.getElementById("linksModal")
+.style.display="flex";
+
+}
+
+function closeLinksModal(){
+
+document.getElementById("linksModal")
+.style.display="none";
+
+}
+
+window.addEventListener("click",function(e){
+
+let linksModal =
+document.getElementById("linksModal");
+
+if(e.target===linksModal){
+linksModal.style.display="none";
+}
+
+});
 </script>
 
 </body>

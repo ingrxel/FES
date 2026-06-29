@@ -234,6 +234,63 @@ transition:.2s;
 .sidebar-bottom-links a:hover{
 background:#f3f3f3;
 }
+
+/* LINKS MODAL */
+
+.links-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:5000;
+}
+
+.links-card{
+width:min(500px,95%);
+background:white;
+border-radius:30px;
+padding:35px 30px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+position:relative;
+text-align:center;
+}
+
+.links-card h2{
+color:#0B5D3B;
+margin-bottom:30px;
+font-size:30px;
+}
+
+.close-links{
+position:absolute;
+top:20px;
+left:20px;
+font-size:26px;
+cursor:pointer;
+color:#124c7c;
+}
+
+.link-box{
+display:block;
+padding:18px;
+margin-bottom:15px;
+background:#edf8ee;
+border-radius:18px;
+text-decoration:none;
+color:#0B5D3B;
+font-size:18px;
+font-weight:700;
+transition:.3s;
+}
+
+.link-box:hover{
+background:#dff0e2;
+transform:translateY(-3px);
+}
+
 /* HERO */
 
 .field-hero{
@@ -406,7 +463,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 min-height:90px;
- 
+
 font-size:clamp(14px,1.3vw,18px);
 line-height:1.8;
 }
@@ -444,11 +501,8 @@ display:flex;
 flex-wrap:nowrap;
 justify-content:space-evenly;
 align-items:flex-start;
-
 gap:clamp(2px,0.5vw,10px);
-
 padding:35px 5px;
-
 width:100%;
 max-width:1000px;
 margin:auto;
@@ -787,11 +841,42 @@ onclick="toggleDepartments()"></i>
 
 <div class="sidebar-divider"></div>
 
-<a href="#">الحساب الرسمي</a>
+<a href="javascript:void(0)"
+onclick="closeMenu(); openLinksModal()">
+روابط مهمة
+</a>
+
+</div></div>
+<div class="links-modal" id="linksModal">
+
+<div class="links-card">
+
+<div class="close-links"
+onclick="closeLinksModal()">
+✕
+</div>
+
+<h2>روابط مهمة</h2>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+الموقع الرسمي للكلية
+</a>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+بوابة الخدمات الإلكترونية
+</a>
+
+<a href="رابطك" target="_blank"
+class="link-box">
+منصة بلاك بورد
+</a>
 
 </div>
 
 </div>
+
 
 <section class="field-hero">
 
@@ -849,7 +934,7 @@ onclick="toggleDepartments()"></i>
 <h2 class="section-title">متطلبات الرحلات الحقلية</h2>
 <ul class="requirements">
 <li>إحضار الماء.</li>
-<li>الإلتزام بإحضار وارتداء سترة السلامة بلون ناصع.</li>
+<li>الإلتزام بإحضار وارتداء سترة السلامة بلون ساطع.</li>
 <li> ارتداء أحذية السلامة الخاصة بالرحلات .</li>
 <li> توفر نظارات وقفازات السلامة .</li>
 <li>توفير النوتة الحقلية ذات الغلاف القاسي و كل ما يلزم لتسجيل الملاحظات .</li>
@@ -941,6 +1026,30 @@ document.getElementById("popupText").innerText=text;
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
+function openLinksModal(){
+
+document.getElementById("linksModal")
+.style.display="flex";
+
+}
+
+function closeLinksModal(){
+
+document.getElementById("linksModal")
+.style.display="none";
+
+}
+
+window.addEventListener("click",function(e){
+
+let linksModal =
+document.getElementById("linksModal");
+
+if(e.target===linksModal){
+linksModal.style.display="none";
+}
+
+});
 </script>
 
 </body>

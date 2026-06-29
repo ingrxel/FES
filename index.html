@@ -343,7 +343,7 @@ margin:0 auto;
 font-size:clamp(9px,1vw,11px);
 font-weight:700;
 color:#0B5D3B;
-margin-top:px;
+margin-top:0;
 }
 
 .college{
@@ -742,6 +742,62 @@ font-weight:600;
 color:#0B5D3B;
 }
 
+/* LINKS MODAL */
+
+.links-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:5000;
+}
+
+.links-card{
+width:min(500px,95%);
+background:white;
+border-radius:30px;
+padding:35px 30px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+position:relative;
+text-align:center;
+}
+
+.links-card h2{
+color:#0B5D3B;
+margin-bottom:30px;
+font-size:30px;
+}
+
+.close-links{
+position:absolute;
+top:20px;
+left:20px;
+font-size:26px;
+cursor:pointer;
+color:#124c7c;
+}
+
+.link-box{
+display:block;
+padding:18px;
+margin-bottom:15px;
+background:#edf8ee;
+border-radius:18px;
+text-decoration:none;
+color:#0B5D3B;
+font-size:18px;
+font-weight:700;
+transition:.3s;
+}
+
+.link-box:hover{
+background:#dff0e2;
+transform:translateY(-3px);
+}
+
 /* ABOUT TEAM */
 
 .about-team{
@@ -856,13 +912,10 @@ rgba(255,255,255,.82),
 rgba(255,255,255,.82)
 ),
 url("MOUNT.PNG");
-
 background-position:center;
 background-size:cover;
 background-repeat:no-repeat;
-
 backdrop-filter:blur(3px);
-
 text-align:center;
 }
 
@@ -872,10 +925,13 @@ height:130px;
 
 border-radius:50%;
 object-fit:cover;
-
-border:5px solid white;
-
-margin-bottom:18px;
+padding:5px;
+background:linear-gradient(
+135deg,
+#0B5D3B,
+#3D7A5C,
+#124c7c
+);margin-bottom:18px;
 }
 
 .modal-bg h3{
@@ -903,31 +959,24 @@ margin-bottom:25px;
 .social-icons a{
 width:50px;
 height:50px;
-
 border-radius:50%;
 background:rgba(255,255,255,.2);
 
 display:flex;
 justify-content:center;
 align-items:center;
-
 color:#5F9C7A;
 font-size:22px;
-
 text-decoration:none;
 }
 
 .close-modal{
 width:100%;
-
 padding:14px;
-
 border:none;
 border-radius:14px;
-
 background:#0B5D3B;
 color:white;
-
 font-size:16px;
 font-weight:700;
 
@@ -1149,15 +1198,14 @@ color:rgba(255,255,255,0.55);
 
 </div>
 
-<div class="language-btn">
-ع/A
-</div>
 
 </header>
 
 <div class="welcome-toast">
 
-<i class="fa-solid fa-circle-info"></i>
+<i class="fa-solid fa-circle-info"></i><div class="language-btn">
+ع/A
+</div>
 
 <p>
 صُممت هذه الصفحة لتكون مرجعًا سريعًا للإجابة عن أكثر الأسئلة شيوعًا المتعلقة بكلية علوم الأرض.
@@ -1213,7 +1261,10 @@ onclick="toggleDepartments()"></i>
 
 <div class="sidebar-divider"></div>
 
-<a href="#">الحساب الرسمي</a>
+<a href="javascript:void(0)"
+onclick="closeMenu(); openLinksModal();">
+روابط مهمة
+</a>
 
 </div>
 </div>
@@ -1299,13 +1350,53 @@ placeholder="ابــحــث عـن ...">
 <div class="icon-text">مــعرض الــصــور</div>
 </a>
 
-<a href="#">
+<a href="javascript:void(0)" onclick="openLinksModal()">
 <div class="circle-icon">
-<i class="fa-brands fa-x-twitter"></i>
+<i class="fa-solid fa-link"></i>
 </div>
-<div class="icon-text">الــحـساب الــرسمي</div>
+<div class="icon-text">روابط مهمة</div>
 </a>
 
+</div>
+
+<!-- IMPORTANT LINKS MODAL -->
+
+<div class="links-modal" id="linksModal">
+
+<div class="links-card">
+
+<div class="close-links"
+onclick="closeLinksModal()">
+✕
+</div>
+
+<h2>روابط مهمة</h2>
+
+<a href="ضع_الرابط_هنا"
+target="_blank"
+class="link-box">
+الموقع الرسمي للكلية
+</a>
+
+<a href="ضع_الرابط_هنا"
+target="_blank"
+class="link-box">
+بوابة الخدمات الإلكترونية
+</a>
+
+<a href="ضع_الرابط_هنا"
+target="_blank"
+class="link-box">
+منصة بلاك بورد
+</a>
+
+<a href="ضع_الرابط_هنا"
+target="_blank"
+class="link-box">
+التقويم الأكاديمي
+</a>
+
+</div>
 </div>
 
 </section>
@@ -1326,7 +1417,7 @@ placeholder="ابــحــث عـن ...">
 ريتال عبد المنان
 </button>
 
-<a href="ضع_رابط_محمد_هنا"
+<a href="https://geomohammed.carrd.co/"
 target="_blank"
 class="team-btn">
 محمد خبراني
@@ -1349,7 +1440,7 @@ class="team-btn">
 
 <div class="modal-bg">
 
-<img src="retal-photo.png"
+<img src="HRT.JPG"
 class="profile-img">
 
 <h3>
@@ -1357,8 +1448,8 @@ class="profile-img">
 </h3>
 
 <p class="modal-bio">
-اكتبي هنا نبذة مختصرة عنك.
-</p>
+جيولوجية تؤمن بأن الجيولوجي هو محور فهم هذا العالم، وأن التعلم رحلة لا تتوقف، <br>
+لذا أسعى دائمًا للنمو والتطور وتحويل الأفكار إلى واقع.</p>
 
 <div class="social-icons">
 
@@ -1366,7 +1457,7 @@ class="profile-img">
 <i class="fa-solid fa-envelope"></i>
 </a>
 
-<a href="ضع_رابط_لينكدإن_هنا"
+<a href="https://www.linkedin.com/in/retal-abdulmannan-b9730637a"
 target="_blank">
 <i class="fa-brands fa-linkedin"></i>
 </a>
@@ -1449,6 +1540,17 @@ else{
 menu.style.display="block";
 }
 }
+
+window.addEventListener("click",function(e){
+
+let linksModal =
+document.getElementById("linksModal");
+
+if(e.target===linksModal){
+linksModal.style.display="none";
+}
+
+});
 const searchDatabase = [
 
 {
@@ -1529,7 +1631,7 @@ keywords:[
 
 {
 title:"قسم الجيولوجيا الهندسية والبيئية",
-url:"ENVI/ENVI.html",
+url:"DEP/ENVI.html",
 keywords:[
 "الجيولوجيا الهندسية",
 "الجيولوجيا البيئية",
@@ -1540,7 +1642,7 @@ keywords:[
 
 {
 title:"قسم تقنيات الاستكشاف الجيولوجي",
-url:"EXPL/EXPL.html",
+url:"DEP/EXPL.html",
 keywords:[
 "الاستكشاف",
 "تقنيات الاستكشاف",
@@ -1551,7 +1653,7 @@ keywords:[
 
 {
 title:"قسم الجيوفيزياء",
-url:"GEPHY/GEPHY.html",
+url:"DEP/GEPHY.html",
 keywords:[
 "الجيوفيزياء",
 "جيوفيزياء",
@@ -1561,7 +1663,7 @@ keywords:[
 
 {
 title:"قسم جيولوجيا المياه",
-url:"HYDRO/HYDRO.html",
+url:"DEP/HYDRO.html",
 keywords:[
 "جيولوجيا المياه",
 "المياه",
@@ -1572,7 +1674,7 @@ keywords:[
 
 {
 title:"قسم الثروة المعدنية والصخور",
-url:"MINROK/MINROK.html",
+url:"DEP/MINROK.html",
 keywords:[
 "الثروة المعدنية",
 "الصخور",
@@ -1583,7 +1685,7 @@ keywords:[
 
 {
 title:"قسم الجيولوجيا البنائية والاستشعار عن بعد",
-url:"STRUC/STRUC.html",
+url:"DEP/STRUC.html",
 keywords:[
 "الجيولوجيا البنائية",
 "الاستشعار عن بعد",
@@ -1680,7 +1782,19 @@ modal.style.display="none";
 }
 
 });
+function openLinksModal(){
 
+document.getElementById("linksModal")
+.style.display="flex";
+
+}
+
+function closeLinksModal(){
+
+document.getElementById("linksModal")
+.style.display="none";
+
+}
 </script>
 
 </body>
